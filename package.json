@@ -1,0 +1,32 @@
+{
+  "name": "ctey-projects",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev --turbo",
+    "start": "next start",
+    "postinstall": "fumadocs-mdx"
+  },
+  "dependencies": {
+    "next": "15.3.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "fumadocs-ui": "15.6.2",
+    "fumadocs-core": "15.6.2",
+    "fumadocs-mdx": "11.6.10"
+  },
+  "devDependencies": {
+    "@types/node": "24.0.7",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "typescript": "^5.8.3",
+    "@types/mdx": "^2.0.13",
+    "@tailwindcss/postcss": "^4.1.11",
+    "tailwindcss": "^4.1.11",
+    "postcss": "^8.5.6",
+    "eslint": "^8",
+    "eslint-config-next": "15.3.4"
+  },
+  "packageManager": "pnpm@10.12.1+sha512.f0dda8580f0ee9481c5c79a1d927b9164f2c478e90992ad268bbb2465a736984391d6333d2c327913578b2804af33474ca554ba29c04a8b13060a717675ae3ac"
+}
