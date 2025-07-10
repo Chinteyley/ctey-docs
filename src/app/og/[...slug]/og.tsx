@@ -77,31 +77,12 @@ export function generate({
                         color: primaryTextColor,
                     }}
                 >
-                    <svg
-                        width="60"
-                        height="60"
-                        viewBox="0 0 180 180"
-                        filter="url(#logo-shadow)"
-                    >
-                        <circle cx="90" cy="90" r="86" fill="url(#logo-iconGradient)" />
-                        <defs>
-                            <filter id="logo-shadow" colorInterpolationFilters="sRGB">
-                                <feDropShadow
-                                    dx="0"
-                                    dy="0"
-                                    stdDeviation="4"
-                                    floodColor="white"
-                                    floodOpacity="1"
-                                />
-                            </filter>
-                            <linearGradient
-                                id="logo-iconGradient"
-                                gradientTransform="rotate(45)"
-                            >
-                                <stop offset="45%" stopColor="black" />
-                                <stop offset="100%" stopColor="white" />
-                            </linearGradient>
-                        </defs>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+                         className="">
+                        <path d="M10.5 16h3"></path>
+                        <path d="m4 16 4-4-4-4"></path>
+                        <path d="m18 16 4-4-4-4"></path>
                     </svg>
                     <p
                         style={{
