@@ -1,5 +1,4 @@
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
-
 /**
  * Shared layout configurations
  *
@@ -10,19 +9,29 @@ import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
 export const baseOptions: BaseLayoutProps = {
   nav: {
     title: (
-      <>
-        <svg
-          width="24"
-          height="24"
-          xmlns="http://www.w3.org/2000/svg"
-          aria-label="Logo"
-        >
-          <circle cx={12} cy={12} r={12} fill="currentColor" />
-        </svg>
-        My App
-      </>
+        <>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+                 className="">
+                <path d="M10.5 16h3"></path>
+                <path d="m4 16 4-4-4-4"></path>
+                <path d="m18 16 4-4-4-4"></path>
+            </svg>
+            CTEY
+        </>
     ),
+
   },
-  // see https://fumadocs.dev/docs/ui/navigation/links
-  links: [],
+    // see https://fumadocs.dev/docs/ui/navigation/links
+    links: [
+        {
+            text: 'Projects',
+            url: '/docs/projects',
+        },
+        {
+            text: 'Contacts',
+            url: '/docs/contacts',
+        }
+        ],
+    githubUrl:"https://github.com/chinteyley"
 };
