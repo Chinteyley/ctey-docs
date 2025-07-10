@@ -13,8 +13,8 @@ export const baseOptions: BaseLayoutProps = {
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                  stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
                  className="">
-                <path d="M10.5 16h3"></path>
-                <path d="m4 16 4-4-4-4"></path>
+                <path d="M10 16h4"></path>
+                <path d="m2 16 4-4-4-4"></path>
                 <path d="m18 16 4-4-4-4"></path>
             </svg>
             CTEY
