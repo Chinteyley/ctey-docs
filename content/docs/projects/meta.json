@@ -2,6 +2,6 @@
   "title": "My Projects",
   "description": "Explore my projects",
   "root": false,
-  "icon": "Code",
-  "pages": ["(web-app)", "(mobile-app)"]
+  "icon": "CodeXml",
+  "pages": ["(web-app)", "(mobile-app)", "(ML-projects)"]
 }
