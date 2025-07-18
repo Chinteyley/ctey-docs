@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     siteName: 'CTEY',
     images: [
       {
-        url: 'https://ctey.dev/og', // Replace with your actual OG image
+        url: 'https://ctey.dev/og/image.png', // Replace with your actual OG image
         width: 1200,
         height: 630,
         alt: 'CTEY',
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     creator: '@kimteyley', // Replace with your actual Twitter handle
     images: [
       {
-        url: 'https://ctey.dev/og', // Replace with your actual Twitter image
+        url: 'https://ctey.dev/og/image.png', // Replace with your actual Twitter image
         width: 1200,
         height: 630,
         alt: 'CTEY',
