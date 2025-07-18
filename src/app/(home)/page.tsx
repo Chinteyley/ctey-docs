@@ -1,8 +1,26 @@
+import { Metadata } from 'next';
 import {
     AnimatedSpan,
     Terminal,
     TypingAnimation,
 } from "@/components/magicui/terminal";
+
+export const metadata: Metadata = {
+    title: 'Chintey - Software Developer',
+    description: 'Software Developer specializing in TypeScript, React, and React Native. Passionate about Anime and Open Source.',
+    openGraph: {
+        title: 'Chintey - Software Developer',
+        description: 'Software Developer specializing in TypeScript, React, and React Native. Passionate about Anime and Open Source.',
+        images: '/og/image.png',
+        type: 'website',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Chintey - Software Developer',
+        description: 'Software Developer specializing in TypeScript, React, and React Native. Passionate about Anime and Open Source.',
+        images: '/og/image.png',
+    },
+};
 
 export default function HomePage() {
     return (
