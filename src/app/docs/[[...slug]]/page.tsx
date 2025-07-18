@@ -52,6 +52,8 @@ export async function generateMetadata({
     description: page.data.description,
     openGraph: {
       images: image,
+      siteName: page.data.title,
+      url: `https://ctey.dev/docs/${slug.join('/')}`,
     },
     twitter: {
       card: 'summary_large_image',
