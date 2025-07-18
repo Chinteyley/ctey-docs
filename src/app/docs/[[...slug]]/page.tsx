@@ -59,5 +59,8 @@ export async function generateMetadata({
       card: 'summary_large_image',
       images: image,
     },
+    alternates: {
+      canonical: `https://www.ctey.dev/docs/${slug.join('/')}`,
+    }
   };
 }
