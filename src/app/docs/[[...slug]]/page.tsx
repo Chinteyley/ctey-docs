@@ -46,12 +46,14 @@ export async function generateMetadata({
   const { slug = [] } = await params;
   const page = source.getPage(slug);
   if (!page) notFound();
-  const image = ['/og', ...slug, 'image.png'].join('/');
+  const image = ['/og/docs', ...slug, 'image.png'].join('/');
   return {
     title: page.data.title,
     description: page.data.description,
     openGraph: {
       images: image,
+      siteName: page.data.title,
+      url: `https://ctey.dev/docs/${slug.join('/')}`,
     },
     twitter: {
       card: 'summary_large_image',

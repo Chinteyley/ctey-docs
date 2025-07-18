@@ -11,8 +11,8 @@ export async function GET(
 	if (!page) notFound();
 	return generateOGImage({
 		primaryTextColor: 'rgb(240,240,240)',
-		title: "Chintey - Software Developer",
-		description: 'Software Developer specializing in TypeScript, React, and React Native. Passionate about Anime and Open Source.',
+		title: page.data.title,
+		description: page.data.description,
 	});
 }
 
