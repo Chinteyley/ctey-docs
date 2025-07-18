@@ -18,19 +18,19 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://ctey.dev'), // Replace with your actual domain
   title: {
-    template: '%s | CTEY',
-    default: 'CTEY - Project Documentation and Portfolio',
+    template: '%s | Chintey Ley',
+    default: 'Chintey Ley – Project Documentation and Portfolio',
   },
-  description: 'A documentation site showcasing projects, skills, and expertise.',
+  description: 'Chintey Ley’s documentation site showcasing projects, skills, and technical expertise.',
   keywords: ['documentation', 'portfolio', 'projects', 'skills', 'expertise'],
   authors: [
     {
-      name: 'chintey', // Replace with your actual name
-      url: 'https://ctey.dev', // Replace with your actual URL
+      name: 'Chintey Ley',
+      url: 'https://ctey.dev',
     },
   ],
-  creator: 'chintey', // Replace with your actual name
-  publisher: 'chintey', // Replace with your actual name
+  creator: 'Chintey Ley',
+  publisher: 'Chintey Ley',
   robots: {
     index: true,
     follow: true,
@@ -43,9 +43,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://ctey.dev', // Replace with your actual URL
-    title: 'CTEY - Project Documentation and Portfolio',
-    description: 'A documentation site showcasing projects, skills, and expertise.',
-    siteName: 'CTEY',
+    siteName: 'Chintey Ley',
     images: [
       {
         url: 'https://ctey.dev/og/image.png', // Replace with your actual OG image
@@ -57,8 +55,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'CTEY - Project Documentation and Portfolio',
-    description: 'A documentation site showcasing projects, skills, and expertise.',
     creator: '@kimteyley', // Replace with your actual Twitter handle
     images: [
       {

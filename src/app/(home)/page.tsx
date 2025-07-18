@@ -6,11 +6,11 @@ import {
 } from "@/components/magicui/terminal";
 
 export const metadata: Metadata = {
-    title: 'Chintey - Software Developer',
-    description: 'Software Developer specializing in TypeScript, React, and React Native. Passionate about Anime and Open Source.',
+    title: 'Chintey Ley - Software Developer',
+    description: 'Chintey (Chintey Ley), a Software Developer specializing in TypeScript, React, and React Native. Passionate about Anime and Open Source.',
     openGraph: {
         url: 'https://ctey.dev/',
-        siteName: "Chintey - Software Developer",
+        siteName: "Chintey Ley - Software Developer",
         images: '/og/image.png',
     },
     twitter: {
