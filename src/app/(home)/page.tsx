@@ -9,14 +9,10 @@ export const metadata: Metadata = {
     title: 'Chintey - Software Developer',
     description: 'Software Developer specializing in TypeScript, React, and React Native. Passionate about Anime and Open Source.',
     openGraph: {
-        title: 'Chintey - Software Developer',
-        description: 'Software Developer specializing in TypeScript, React, and React Native. Passionate about Anime and Open Source.',
-        images: '/og/image.png',
+        url: 'https://ctey.dev',
     },
-    twitter: {
-        title: 'Chintey - Software Developer',
-        description: 'Software Developer specializing in TypeScript, React, and React Native. Passionate about Anime and Open Source.',
-        images: '/og/image.png',
+    alternates: {
+        canonical: 'https://ctey.dev',
     },
 };
 
