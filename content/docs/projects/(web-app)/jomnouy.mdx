@@ -1,0 +1,60 @@
+---
+title: Jomnouy
+description: "AI-powered National Baccalaureate prep platform for Cambodian students with bilingual support, study tools, and gamification."
+icon: GraduationCap
+---
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+## Overview
+Jomnouy (ជំនួយ, "help" in Khmer) is a production-grade learning platform for Cambodia's National Baccalaureate exam. It blends AI-driven study workflows with structured practice, analytics, and a token economy, delivered through a bilingual (English + Khmer) Next.js application.
+
+### Key Features
+- AI tools: chatbot, essay feedback, and image-based Snap & Solve with step-by-step reasoning
+- Study planning: AI schedule generator, time blocks, and progress tracking
+- Assessment: practice exams, quizzes, flashcards, and previous exam archive
+- Engagement system: XP, streaks, quests, leagues, and rewards
+- Commerce: token economy with PayWay payments and tiered feature unlocks
+- Ops: admin dashboard for analytics, content, and user management
+
+### Tech Stack
+- Next.js 15 (App Router), React 19, TypeScript
+- Supabase (PostgreSQL, Auth, Storage, Edge Functions)
+- Vercel AI SDK + Google Gemini
+- Tailwind CSS, Shadcn/ui, Radix UI, Framer Motion
+- PayWay payment gateway + token-based billing
+
+### Architecture
+<Mermaid
+    chart={`flowchart LR
+    Users((Users)) --> Web[Next.js App Router]
+    Web --> AI[Vercel AI SDK]
+    AI --> Gemini[Google Gemini]
+    Web --> Supa[Supabase]
+    Supa --> DB[(PostgreSQL)]
+    Supa --> Auth[Auth]
+    Supa --> Storage[Storage]
+    Supa --> Edge[Edge Functions]
+    Web --> PayWay[PayWay Gateway]
+    PayWay --> Tokens[Token Economy]
+    Web --> Admin[Admin Dashboard]`}
+/>
+
+### Role
+- Project Lead and Lead Developer
+
+### How to Use
+<Steps>
+    <Step>
+        Sign up and choose your preferred language (English or Khmer).
+    </Step>
+    <Step>
+        Start with AI tools like Chatbot, Essay Assistant, or Snap & Solve.
+    </Step>
+    <Step>
+        Track progress with quizzes, streaks, and your personalized study schedule.
+    </Step>
+</Steps>
+
+### Links
+
+[Live Demo](https://jomnouy.me)
