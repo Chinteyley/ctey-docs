@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   description:
     "Chintey (Chintey Ley), a Software Developer specializing in TypeScript, React, and React Native. Passionate about Anime and Open Source.",
   openGraph: {
+    type: "website",
     url: "https://ctey.dev/",
     siteName: "Chintey Ley - Software Developer",
     images: "/og/image.png",
@@ -68,6 +69,39 @@ export default function HomePage() {
           <ContactCard />
         </BentoCell>
       </BentoGrid>
+
+      {/* Additional Content Section for SEO */}
+      <section className="max-w-4xl w-full mt-12 px-4">
+        <div className="prose prose-neutral dark:prose-invert max-w-none">
+          <h2 className="text-2xl font-bold mb-4">About My Work</h2>
+          <p className="text-muted-foreground mb-4">
+            As a passionate software developer, I specialize in building modern web and mobile applications 
+            using cutting-edge technologies. My expertise lies in creating seamless user experiences with 
+            TypeScript, React, and React Native, while leveraging the power of Next.js for server-side 
+            rendering and optimal performance.
+          </p>
+          <p className="text-muted-foreground mb-4">
+            Throughout my career, I&apos;ve developed various projects ranging from AI-powered educational 
+            platforms to creative tools for content creators. My work combines technical excellence with 
+            user-centric design, ensuring that every application I build is not only functional but also 
+            intuitive and engaging. I believe in writing clean, maintainable code and following best 
+            practices to deliver high-quality software solutions.
+          </p>
+          <p className="text-muted-foreground mb-4">
+            I&apos;m deeply committed to the open-source community and continuously learning new technologies 
+            to stay at the forefront of web development. Whether it&apos;s implementing complex state management, 
+            optimizing application performance, or creating beautiful user interfaces with Tailwind CSS, 
+            I approach every challenge with enthusiasm and dedication. My passion for anime and open source 
+            drives me to create projects that inspire and help others in the developer community.
+          </p>
+          <p className="text-muted-foreground">
+            If you&apos;re looking for a dedicated developer who can bring your ideas to life with modern 
+            technologies and best practices, I&apos;d love to collaborate on your next project. Explore my 
+            portfolio to see examples of my work, or reach out to discuss how we can work together to 
+            build something amazing.
+          </p>
+        </div>
+      </section>
     </main>
   );
 }

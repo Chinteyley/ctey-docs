@@ -1,1 +1,14 @@
-import { MetadataRoute } from 'next';export default function robots(): MetadataRoute.Robots {  return {    rules: {      userAgent: '*',      allow: '/',      disallow: ['/api/', '/admin/'],    },    sitemap: 'https://ctey.dev/sitemap.xml', // Replace with your actual domain  };}
+import { MetadataRoute } from 'next';
+
+export default function robots(): MetadataRoute.Robots {
+  return {
+    rules: [
+      {
+        userAgent: '*',
+        allow: '/',
+        disallow: ['/api/', '/admin/'],
+      },
+    ],
+    sitemap: 'https://ctey.dev/sitemap.xml',
+  };
+}
