@@ -60,7 +60,7 @@ export async function generateMetadata({
       images: image,
     },
     alternates: {
-      canonical: `https://www.ctey.dev/docs/${slug.join('/')}`,
+      canonical: `https://ctey.dev/docs/${slug.join('/')}`,
     }
   };
 }
