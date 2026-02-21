@@ -3,5 +3,5 @@
   "description": "Explore my projects",
   "root": false,
   "icon": "CodeXml",
-  "pages": ["(web-app)", "(mobile-app)", "(ML-projects)", "(mac-app)"]
+  "pages": ["(web-app)", "(mobile-app)", "(mac-app)", "(ML-projects)"]
 }
