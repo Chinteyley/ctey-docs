@@ -20,13 +20,13 @@ export const metadata: Metadata = {
     images: "/og/image.png",
   },
   alternates: {
-    canonical: "https://www.ctey.dev",
+    canonical: "https://ctey.dev",
   },
 };
 
 export default function HomePage() {
   return (
-    <main className="flex flex-1 flex-col items-center justify-center p-4 md:p-8">
+    <div className="flex flex-1 flex-col items-center justify-center p-4 md:p-8">
       <BentoGrid>
         {/* Hero - Large left cell spanning 2 rows */}
         <BentoCell
@@ -68,6 +68,6 @@ export default function HomePage() {
           <ContactCard />
         </BentoCell>
       </BentoGrid>
-    </main>
+    </div>
   );
 }
