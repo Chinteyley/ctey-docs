@@ -1,19 +1,21 @@
 "use client";
 
 import { motion } from "motion/react";
-import { ArrowRight, Laptop, Smartphone, Brain } from "lucide-react";
+import { ArrowRight, Laptop, Smartphone, Brain, Monitor } from "lucide-react";
 import Link from "next/link";
 
 const categoryIcons = {
   web: Laptop,
   mobile: Smartphone,
   ml: Brain,
+  mac: Monitor,
 };
 
 const categoryColors = {
   web: "bg-blue-500/10 text-blue-500",
   mobile: "bg-green-500/10 text-green-500",
   ml: "bg-purple-500/10 text-purple-500",
+  mac: "bg-orange-500/10 text-orange-500",
 };
 
 const featuredProjects = [
@@ -30,10 +32,10 @@ const featuredProjects = [
     href: "/docs/projects/snappost",
   },
   {
-    title: "Anime Face GAN",
-    description: "Generative AI for anime characters",
-    category: "ml" as const,
-    href: "/docs/projects/anime-face-gan",
+    title: "Neko",
+    description: "Menu bar kitten that follows your mouse on macOS",
+    category: "mac" as const,
+    href: "/docs/projects/neko",
   },
 ];
 

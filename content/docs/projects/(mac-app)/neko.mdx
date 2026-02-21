@@ -1,0 +1,39 @@
+---
+title: Neko - Menu Bar Kitten
+description: A tiny macOS menu bar app featuring a pixel sprite kitten that follows your mouse cursor across the screen.
+icon: Cat
+---
+import { GithubInfo } from 'fumadocs-ui/components/github-info';
+
+## Overview
+
+Neko is a lightweight macOS menu bar application that places an animated pixel sprite kitten on your screen. The kitten follows your mouse cursor in real time, staying always on top of other windows — including fullscreen apps. It runs entirely from the menu bar with no Dock icon, making it an unobtrusive desktop companion.
+
+### Features
+
+- Animated pixel sprite that tracks the cursor with smooth movement
+- Always-on-top window, including over fullscreen apps
+- Menu bar only — no Dock icon cluttering your workspace
+- Three size presets: Small (16 px), Medium (24 px), Large (32 px)
+- Three speed settings: Slow, Normal, Fast
+- Global shortcut `Cmd+Opt+P` to pause or resume
+- Settings persist between launches
+
+### Tech Stack
+
+- Swift
+- SwiftUI
+- Xcode
+
+### How It Works
+
+The app uses a timer-driven animation loop running at 0.16-second intervals. A state machine determines the kitten's current animation based on its position relative to the mouse cursor — idle, walking, running, or scratching. The sprite sheet contains 5 columns and 6 rows of frames at a base resolution of 16x16 pixels, scaled up with nearest-neighbor interpolation to keep the pixel art crisp at larger sizes.
+
+### What I Learned
+
+Building Neko deepened my understanding of macOS app development outside the typical window-based paradigm. Working with menu bar apps, always-on-top windows, and global keyboard shortcuts required diving into AppKit APIs that most SwiftUI tutorials don't cover. The animation state machine was a fun exercise in modeling behavior through discrete states and transitions.
+
+<GithubInfo
+    owner="chinteyley"
+    repo="neko"
+/>
