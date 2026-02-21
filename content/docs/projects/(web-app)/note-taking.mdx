@@ -9,12 +9,19 @@ import { GithubInfo } from 'fumadocs-ui/components/github-info';
 
 
 ## Overview
-A note-taking web application that allows users to manage and organize their personal notes. Features a clean UI for creating, editing, deleting, and categorizing notes.
+A note-taking web application that allows users to manage and organize their personal notes. Features a clean UI for creating, editing, deleting, and categorizing notes. The app also integrates AI-powered features through the OpenAI API, allowing users to generate summaries, expand on ideas, and get writing suggestions directly within their notes. It was built as a full-stack project to explore the MEAN stack combined with modern deployment practices.
+
+### AI Features
+
+The application integrates with the OpenAI API to provide intelligent writing assistance directly inside the note editor. Users can highlight a section of text and request an AI-generated summary, ask the AI to expand on a brief idea into a full paragraph, or get grammar and style suggestions. The AI responses are streamed back to the frontend so users see results appear in real-time rather than waiting for a complete response. These features are designed to help users capture and refine their thoughts more efficiently without switching to a separate tool.
 
 ### Key Features
-- Create, edit, and delete notes
-- Categorize notes
-- Clean and intuitive UI
+- Create, edit, and delete notes with a rich text editor
+- Categorize notes into custom folders and tags for easy organization
+- AI-powered writing assistance including summarization, expansion, and style suggestions via OpenAI
+- Clean and intuitive UI with responsive design for desktop and mobile use
+- User authentication with secure login and registration
+- Real-time AI response streaming for a smooth writing experience
 
 ### Tech Stack
 - Angular
@@ -25,6 +32,10 @@ A note-taking web application that allows users to manage and organize their per
 - NGINX
 - OpenAI API
 
+### Deployment
+
+The application is containerized with Docker for consistent deployment across environments. The frontend Angular app and the backend Express API each run in their own containers, orchestrated with Docker Compose. An NGINX reverse proxy sits in front of both services, handling SSL termination, static asset caching, and routing requests to the correct container. This setup ensures the application runs reliably in production while keeping the development environment closely matched to the deployed configuration.
+
 ### How to Use
 
 <Steps>
@@ -32,7 +43,10 @@ A note-taking web application that allows users to manage and organize their per
         Register or log in.
     </Step>
     <Step>
-        Create and organize your notes.
+        Create and organize your notes into categories.
+    </Step>
+    <Step>
+        Use the AI assistant to summarize, expand, or refine your writing.
     </Step>
     <Step>
         Edit or delete notes as needed.

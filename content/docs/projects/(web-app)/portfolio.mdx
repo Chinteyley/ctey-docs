@@ -1,24 +1,39 @@
 ---
 title: Portfolio Website - Next.js & Fumadocs
-description: "This is my personal portfolio website showcasing my skills and projects, built with Fumadocs."
+description: "A personal portfolio and documentation website built with Next.js, Tailwind CSS, and Fumadocs, showcasing projects, skills, and technical expertise."
 icon: Sticker
 ---
 
 import { GithubInfo } from 'fumadocs-ui/components/github-info';
 
 ## Overview
-This is my personal portfolio website where I showcase my skills, projects, and experiences. It serves as a platform to demonstrate my expertise in web development and design. This documentation site is built with [Fumadocs](https://fumadocs.dev/).
+This is my personal portfolio website where I showcase my skills, projects, and experiences. It serves as a platform to demonstrate my expertise in web development and design. This documentation site is built with [Fumadocs](https://fumadocs.dev/), a framework specifically designed for creating documentation sites with Next.js. Rather than building a traditional single-page portfolio, I chose a documentation-style layout because it allows me to provide in-depth write-ups for each project with proper navigation, search, and content organization.
+
+### Design Decisions
+
+The portfolio uses a documentation-first approach because I wanted each project to have its own dedicated page with enough space to explain the technical details, challenges, and decisions behind it. A typical portfolio site with thumbnail cards and short blurbs does not give enough room to communicate the depth of each project. By using Fumadocs, I get built-in full-text search, a sidebar navigation tree, breadcrumbs, and MDX support out of the box, which means I can focus on writing content rather than building infrastructure. The visual design uses Tailwind CSS and ShadCN components to maintain a clean, consistent look while keeping the codebase maintainable. Motion is used sparingly for page transitions and interactive elements to add polish without hurting performance.
+
+### Fumadocs Features Used
+
+Fumadocs provides several features that make this site effective as both a portfolio and a documentation hub. The MDX content layer allows me to write project pages in Markdown with embedded React components like the GitHub info cards and step-by-step guides seen throughout the site. The automatic sidebar generation reads the file structure and builds navigation without manual configuration. Built-in search powered by Flexsearch lets visitors quickly find specific projects or topics. The framework also handles SEO metadata, Open Graph images, and sitemap generation, which are important for discoverability. Fumadocs supports light and dark mode themes with ShadCN integration, giving visitors a comfortable reading experience regardless of their preference.
+
 ## Key Features
-- Responsive design for all devices
-- Interactive project showcase
+- Responsive design that adapts to phones, tablets, and desktop screens
+- Interactive project showcase with dedicated pages for each project
+- Built-in full-text search for finding projects and content quickly
+- MDX support for mixing Markdown content with interactive React components
+- Automatic sidebar navigation generated from the file structure
+- Light and dark mode support with consistent theming
 - Contact form for inquiries
 - Blog section for sharing insights and updates
+
 ## Tech Stack
 - Next.js
 - Tailwind CSS
 - ShadCN
 - Motion
 - Fumadocs
+
 ## Links
 - [Live Demo](https://ctey.dev)
 
