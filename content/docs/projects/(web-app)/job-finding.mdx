@@ -5,13 +5,20 @@ icon: Search
 ---
 
 ## Overview
-A job finding web application that helps students search for job opportunities, view job details, and apply for positions directly through the platform. Includes filters for location, job type, and more.
+A job finding web application that helps students search for job opportunities, view job details, and apply for positions directly through the platform. Includes filters for location, job type, and more. The platform was designed specifically with students and recent graduates in mind, providing a streamlined experience for discovering entry-level positions, internships, and part-time work opportunities that match their skills and availability.
+
+### How It Works
+
+The search and filter system is built on top of Supabase, which provides both the database and real-time query capabilities. When a user enters search terms or applies filters, the frontend sends a query to the Supabase backend, which performs full-text search across job titles, descriptions, and company names. Filters for location, job type (full-time, part-time, internship), and experience level can be combined to narrow results. The results are returned with pagination to keep the interface responsive even with a large number of listings. Each job listing links to a detail page showing the full description, requirements, company information, and an application form. The application submission is handled through Supabase's row-level security, ensuring that user data is protected and only accessible to authorized parties.
 
 ### Key Features
-- Job search and filtering
-- View job details
-- Apply for jobs online
-- User-friendly interface
+- Full-text job search across titles, descriptions, and company names with instant results
+- Advanced filtering by location, job type, experience level, and category
+- Detailed job listing pages with complete descriptions, requirements, and company profiles
+- Direct online application submission without leaving the platform
+- User-friendly interface built with ShadCN components and smooth Motion animations
+- Responsive design that works across desktop and mobile devices
+- Supabase-powered backend with real-time data and secure row-level access control
 
 ### Tech Stack
 - Next.js

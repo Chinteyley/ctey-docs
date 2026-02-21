@@ -6,16 +6,25 @@ icon: PawPrint
 
 ## Overview
 
-African Wildlife Classifier is an AI-powered image classifier that excels in identifying African wildlife species with 95.6% accuracy. It employs a fine-tuned AlexNet deep learning model to classify four iconic African safari animals with real-time confidence scores.
+African Wildlife Classifier is an AI-powered image classifier that excels in identifying African wildlife species with 95.6% accuracy. It employs a fine-tuned AlexNet deep learning model to classify four iconic African safari animals with real-time confidence scores. The project demonstrates how transfer learning can achieve high accuracy even with a relatively small, domain-specific dataset.
+
+### How It Works
+
+The classification pipeline starts with image preprocessing, where uploaded photos are resized and normalized to match the input dimensions expected by the AlexNet architecture. The model uses transfer learning, taking a pre-trained AlexNet that was originally trained on ImageNet and fine-tuning its final classification layers for the specific task of identifying African wildlife. During inference, the image passes through the convolutional layers that extract hierarchical features such as edges, textures, and shapes, followed by fully connected layers that map these features to one of the four target species. The output includes a predicted class label along with confidence scores for each species, giving users a clear understanding of how certain the model is about its prediction.
+
+### Dataset
+
+The model was trained on a curated dataset of African wildlife images containing four classes: Buffalo, Elephant, Rhino, and Zebra. Data augmentation techniques including random horizontal flips, rotations, and color jitter were applied during training to increase the effective dataset size and improve the model's ability to generalize to new images. The dataset was split into training, validation, and test sets to ensure reliable performance metrics and prevent overfitting.
 
 ### Features
 
-- Identifies 4 African wildlife species: Buffalo, Elephant, Rhino, Zebra
-- Fine-tuned AlexNet architecture with 95.6% validation accuracy
-- Real-time image classification with confidence scores
-- Interactive web interface for wildlife enthusiasts
-- Data augmentation and preprocessing pipeline
-- Educational tool for wildlife research
+- Identifies 4 African wildlife species: Buffalo, Elephant, Rhino, and Zebra with distinct visual characteristics
+- Fine-tuned AlexNet architecture achieving 95.6% validation accuracy through transfer learning
+- Real-time image classification with per-class confidence scores displayed as percentages
+- Interactive Gradio web interface that accepts image uploads and returns predictions instantly
+- Data augmentation and preprocessing pipeline including normalization, resizing, and random transforms
+- Educational tool for wildlife research and species identification training
+- Deployed on Hugging Face Spaces for free public access without any setup required
 
 ### Tech Stack
 

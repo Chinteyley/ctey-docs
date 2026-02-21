@@ -5,16 +5,23 @@ icon: ScanFace
 ---
 
 ## Overview
-A web application that utilizes cutting-edge technology to accurately and efficiently record attendance. It processes data securely and integrates with a dashboard for managing attendance records. Notifications are sent to update individuals on their attendance status.
+A web application that utilizes cutting-edge technology to accurately and efficiently record attendance. It processes data securely and integrates with a dashboard for managing attendance records. Notifications are sent to update individuals on their attendance status. The system was built to replace manual roll-call processes with an automated solution that saves time and reduces human error in classroom and workplace environments.
+
+### How It Works
+
+The attendance detection and recording pipeline operates in several stages. When a session begins, the system captures visual input and processes it through a detection model running on the Flask backend. The model identifies individuals present in the frame and matches them against a pre-registered database of known faces stored in PostgreSQL. Once a match is confirmed, the system automatically creates an attendance record with a timestamp and associates it with the correct person and session. The Next.js frontend communicates with the Flask API through REST endpoints, sending captured data and receiving processed results. The entire pipeline runs in near real-time, allowing administrators to see attendance records populate on the dashboard as people are detected. If someone is not recognized or a match confidence falls below the threshold, the system flags the entry for manual review rather than recording an incorrect attendance.
 
 ### Key Features
-- Automatic attendance detection and recording
-- Secure data processing
-- Dashboard for attendance management
-- Real-time notifications
+- Automatic attendance detection and recording with minimal manual intervention required
+- Secure data processing with encrypted communication between the frontend and backend services
+- Comprehensive dashboard for attendance management including filtering by date, session, and individual
+- Real-time notifications that alert administrators and individuals about attendance status updates
+- Historical attendance reports with export functionality for record-keeping
+- Support for multiple sessions and groups, allowing different classes or departments to be managed independently
+- Manual override capability for administrators to correct or add attendance records when needed
 
 ### Tech Stack
 - Next.js
 - Flask
-- Prism
+- Prisma
 - PostgreSQL

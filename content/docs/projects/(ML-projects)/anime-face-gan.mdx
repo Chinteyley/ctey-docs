@@ -7,12 +7,23 @@ icon: Laugh
 
 ## Overview
 
-Anime Face GAN is a Generative Adversarial Network (GAN) that excels in generating high-quality anime faces. It employs advanced machine learning techniques to produce realistic and diverse anime character images.
+Anime Face GAN is a Generative Adversarial Network (GAN) that excels in generating high-quality anime faces. It employs advanced machine learning techniques to produce realistic and diverse anime character images. The project was built as a deep learning experiment to explore how generative models can learn artistic styles and produce novel visual content from random noise vectors.
+
+### How It Works
+
+A GAN consists of two neural networks that compete against each other during training. The **generator** takes a random noise vector as input and attempts to produce an image that looks like a real anime face. The **discriminator** receives both real anime face images from the training dataset and fake images from the generator, then tries to distinguish between them. Over thousands of training iterations, the generator improves at creating convincing images while the discriminator becomes better at detecting fakes. This adversarial process eventually reaches an equilibrium where the generator produces images that are nearly indistinguishable from real training samples. The model uses convolutional layers for spatial feature extraction and transposed convolutions in the generator to upsample noise into full-resolution images.
 
 ### Features
 
--   Generates high-quality anime faces
--   Offers diverse character styles and expressions
+-   Generates high-quality anime faces with consistent proportions and color palettes
+-   Offers diverse character styles and expressions including different hair colors, eye shapes, and facial features
+-   Supports adjustable noise vectors to control variation in generated outputs
+-   Includes a Gradio-based web interface for interactive generation without writing code
+-   Trained on a curated dataset of anime face images with data augmentation for better generalization
+
+### What I Learned
+
+Training GANs taught me several important lessons about deep learning. Mode collapse, where the generator produces only a narrow range of outputs, was one of the biggest challenges and required careful tuning of learning rates and architecture choices. I learned the importance of balancing the training pace between the generator and discriminator so that neither network overwhelms the other. Experimenting with different loss functions and batch normalization strategies also gave me practical experience with stabilizing adversarial training. This project deepened my understanding of convolutional neural networks, image preprocessing pipelines, and how to deploy ML models behind interactive web interfaces using Gradio and Hugging Face Spaces.
 
 ### Tech Stack
 
