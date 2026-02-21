@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google';
 import type { ReactNode } from 'react';
 import type { Metadata, Viewport } from 'next';
 import { WebsiteJsonLd, PersonJsonLd } from '@/components/JsonLd';
+import { Analytics } from '@vercel/analytics/next';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -88,6 +89,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         <RootProvider>{children}</RootProvider>
         <WebsiteJsonLd />
         <PersonJsonLd />
+        <Analytics />
       </body>
     </html>
   );
