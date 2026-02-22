@@ -39,7 +39,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Contact
 
-- 📧 Email: [chintey@ctey.dev](mailto:chintey@ctey.dev)
+- 📧 Email: [hello@ctey.dev](mailto:hello@ctey.dev)
 - 💻 GitHub: [@chinteyley](https://github.com/chinteyley)
 - 💼 LinkedIn: [chinteyley](https://www.linkedin.com/in/chinteyley)
 - 🐦 Twitter/X: [@kimteyley](https://x.com/kimteyley)

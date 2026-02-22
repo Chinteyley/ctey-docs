@@ -6,9 +6,9 @@ import Link from "next/link";
 
 const contacts = [
   {
-    label: "chintey@ctey.dev",
+    label: "hello@ctey.dev",
     icon: Mail,
-    href: "mailto:chintey@ctey.dev",
+    href: "mailto:hello@ctey.dev",
   },
   {
     label: "@chinteyley",
