@@ -7,7 +7,7 @@ Personal documentation and portfolio site showcasing my projects, skills, and ex
 This site serves as a comprehensive portfolio and documentation hub featuring:
 
 - **Web Applications**: Attendance systems, note-taking apps, job finding platforms, and more
-- **Mobile Applications**: SnapPost, Password Game, and other mobile projects
+- **Mobile Applications**: SnapPosts, Password Game, and other mobile projects
 - **Machine Learning Projects**: Anime Face GAN, wildlife prediction models
 - **Educational Projects**: Jomnouy - AI-powered National Baccalaureate prep platform
 
