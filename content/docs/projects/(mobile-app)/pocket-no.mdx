@@ -1,0 +1,44 @@
+---
+title: Pocket No - Witty Ways to Say No
+description: "A focused mobile app that generates witty, low-friction ways to say no and copies them to your clipboard instantly."
+icon: Ban
+---
+import { GithubInfo } from 'fumadocs-ui/components/github-info';
+
+## Overview
+
+Pocket No is a single-purpose mobile app that helps you say "no" with style. Tap a button, get a witty refusal, and copy it to your clipboard — all in under a second. It targets iOS (primary), Android, and web, with deep native integration on iOS including Home Screen Quick Actions and Siri Shortcuts via App Intents.
+
+### How It Works
+
+1. Open the app or trigger a Quick Action / Siri Shortcut.
+2. A random "no" reason is fetched from the server-side catalog (with a local fallback of 50 lines).
+3. The reason appears on screen with an animated dot-grid background driven by a custom SKSL shader.
+4. Tap Copy to send it to your clipboard with a satisfying haptic tap.
+5. Tap New to fetch another reason — the background floods with a matrix-wipe transition.
+
+### Key Features
+
+- One-tap copy with haptic feedback
+- Custom Skia SKSL shader for an animated dot-grid background with matrix-wipe transitions
+- iOS Home Screen Quick Action for instant copy without opening the app
+- iOS 18+ App Intent / Siri Shortcut powered by a native Swift target
+- Server-side API route (`GET /api/no`) with automatic fallback to a local catalog
+- Deep linking via `pocketno://` custom URL scheme
+- Light and dark theme with CSS variables and Uniwind (Tailwind CSS v4 for React Native)
+- React Compiler enabled — zero manual memoization
+
+### Tech Stack
+
+- Expo 55 / React Native 0.83
+- Expo Router (typed file-system routing)
+- Uniwind (Tailwind CSS v4 for React Native)
+- React Native Reanimated 4
+- @shopify/react-native-skia (custom SKSL shader)
+- expo-quick-actions & @bacons/apple-targets (iOS native surfaces)
+- expo-haptics & expo-clipboard
+
+<GithubInfo
+    owner="Chinteyley"
+    repo="Pocket-No"
+/>
