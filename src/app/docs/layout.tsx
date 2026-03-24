@@ -1,12 +1,18 @@
-import { DocsLayout } from 'fumadocs-ui/layouts/notebook';
 import type { ReactNode } from 'react';
 import { baseOptions } from '@/app/layout.config';
 import { source } from '@/lib/source';
+import { FluxDocsShell } from '@/components/docs/FluxDocsLayout';
 
 export default function Layout({ children }: { children: ReactNode }) {
+  const { nav, ...rest } = baseOptions;
+
   return (
-    <DocsLayout tree={source.pageTree} {...baseOptions} links={[]}>
+    <FluxDocsShell
+      tree={source.getPageTree()}
+      {...rest}
+      nav={{ ...nav, title: 'CTEY' }}
+    >
       {children}
-    </DocsLayout>
+    </FluxDocsShell>
   );
 }

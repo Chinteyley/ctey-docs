@@ -1,6 +1,7 @@
 import { ImageResponse } from 'next/og';
 import type { ReactElement, ReactNode } from 'react';
-import type { ImageResponseOptions } from 'next/dist/compiled/@vercel/og/types';
+
+type OGImageOptions = ConstructorParameters<typeof ImageResponse>[1];
 
 interface GenerateProps {
     title: ReactNode;
@@ -9,7 +10,7 @@ interface GenerateProps {
 }
 
 export function generateOGImage(
-    options: GenerateProps & ImageResponseOptions,
+    options: GenerateProps & OGImageOptions,
 ): ImageResponse {
     const { title, description, primaryTextColor, ...rest } = options;
 
