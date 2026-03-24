@@ -26,10 +26,10 @@ const featuredProjects = [
     href: "/docs/projects/jomnouy",
   },
   {
-    title: "SnapPosts",
-    description: "AI-powered social media poster creator",
+    title: "Pocket No",
+    description: "Witty ways to say no with one tap",
     category: "mobile" as const,
-    href: "/docs/projects/snapposts",
+    href: "/docs/projects/pocket-no",
   },
   {
     title: "Neko",
