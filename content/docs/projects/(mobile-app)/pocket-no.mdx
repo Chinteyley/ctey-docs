@@ -1,32 +1,34 @@
 ---
 title: Pocket No - Witty Ways to Say No
-description: "A focused mobile app that generates witty, low-friction ways to say no and copies them to your clipboard instantly."
+description: "An iOS-first mobile app for fast witty refusals, with Apple Intelligence personalization and quick-copy shortcuts."
 icon: Ban
 ---
 import { GitHubRepoInfo } from '@/components/docs/GitHubRepoInfo';
 
 ## Overview
 
-Pocket No is a single-purpose mobile app that helps you say "no" with style. Tap a button, get a witty refusal, and copy it to your clipboard — all in under a second. It targets iOS (primary), Android, and web, with deep native integration on iOS including Home Screen Quick Actions and Siri Shortcuts via App Intents.
+Pocket No is an iOS-first mobile app built for one job: helping you decline things quickly without sounding flat. The core flow still gives you a sharp, copy-ready "no" in a tap, but the latest version also adds Apple Intelligence personalization on supported iPhones so you can generate a refusal from your own context or voice input. The app also supports Android and web for the base experience, with the deepest native integrations on iOS through Home Screen Quick Actions and Siri Shortcuts via App Intents.
 
 ### How It Works
 
-1. Open the app or trigger a Quick Action / Siri Shortcut.
-2. A random "no" reason is fetched from the server-side catalog (with a local fallback of 50 lines).
-3. The reason appears on screen with an animated dot-grid background driven by a custom SKSL shader.
-4. Tap Copy to send it to your clipboard with a satisfying haptic tap.
-5. Tap New to fetch another reason — the background floods with a matrix-wipe transition.
+1. Open the app or launch a quick-copy entry point from a Home Screen Quick Action or Siri Shortcut.
+2. Pocket No fetches a fresh refusal from its server-side catalog, with a local fallback when the network is unavailable.
+3. If you want something more specific, open the Personalize composer and describe what you need to say no to, either by typing or by recording a short voice note on supported iPhones.
+4. Apple Intelligence generates a short, copy-ready refusal that fits your context without losing the app's punchy tone.
+5. The final line appears on screen over an animated dot-grid background, ready to copy with haptics or replace with another option.
 
 ### Key Features
 
-- One-tap copy with haptic feedback
-- Custom Skia SKSL shader for an animated dot-grid background with matrix-wipe transitions
-- iOS Home Screen Quick Action for instant copy without opening the app
+- One-tap witty refusal generation and clipboard copy with haptic feedback
+- Apple Intelligence-powered personalization on supported iPhones
+- Text and voice input for generating more context-aware refusals
+- Custom Skia SKSL shader for the animated dot-grid background and matrix-style transitions
+- iOS Home Screen Quick Action for instant copy without opening the full app
 - iOS 18+ App Intent / Siri Shortcut powered by a native Swift target
 - Server-side API route (`GET /api/no`) with automatic fallback to a local catalog
 - Deep linking via `pocketno://` custom URL scheme
-- Light and dark theme with CSS variables and Uniwind (Tailwind CSS v4 for React Native)
-- React Compiler enabled — zero manual memoization
+- Light and dark theme with CSS variables and Uniwind
+- React Compiler enabled for a lean React Native UI layer
 
 ### Tech Stack
 
@@ -35,6 +37,7 @@ Pocket No is a single-purpose mobile app that helps you say "no" with style. Tap
 - Uniwind (Tailwind CSS v4 for React Native)
 - React Native Reanimated 4
 - @shopify/react-native-skia (custom SKSL shader)
+- `@react-native-ai/apple` for Apple Intelligence availability, generation, and voice transcription
 - expo-quick-actions & @bacons/apple-targets (iOS native surfaces)
 - expo-haptics & expo-clipboard
 

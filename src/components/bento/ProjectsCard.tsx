@@ -27,7 +27,7 @@ const featuredProjects = [
   },
   {
     title: "Pocket No",
-    description: "Witty ways to say no with one tap",
+    description: "Apple Intelligence-powered quick refusals",
     category: "mobile" as const,
     href: "/docs/projects/pocket-no",
   },
