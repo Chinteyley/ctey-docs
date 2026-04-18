@@ -27,7 +27,7 @@ const featuredProjects = [
   },
   {
     title: "Pocket No",
-    description: "Witty ways to say no with one tap",
+    description: "iOS-first refusal app with browse, favorites, and quick-copy shortcuts",
     category: "mobile" as const,
     href: "/docs/projects/pocket-no",
   },

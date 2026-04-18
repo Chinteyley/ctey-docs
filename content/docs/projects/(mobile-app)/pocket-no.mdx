@@ -1,45 +1,45 @@
 ---
 title: Pocket No - Witty Ways to Say No
-description: "An iOS-first mobile app for fast witty refusals, with Apple Intelligence personalization and quick-copy shortcuts."
+description: "An iOS-first refusal app with quick copy, browse and favorites tabs, native shortcuts, and Apple Intelligence personalization."
 icon: Ban
 ---
 import { GitHubRepoInfo } from '@/components/docs/GitHubRepoInfo';
 
 ## Overview
 
-Pocket No is an iOS-first mobile app built for one job: helping you decline things quickly without sounding flat. The core flow still gives you a sharp, copy-ready "no" in a tap, but the latest version also adds Apple Intelligence personalization on supported iPhones so you can generate a refusal from your own context or voice input. The app also supports Android and web for the base experience, with the deepest native integrations on iOS through Home Screen Quick Actions and Siri Shortcuts via App Intents.
+Pocket No is an iOS-first mobile app for fast, low-friction refusal. The current product goes beyond a single quick-copy screen: it gives you a home flow for instant lines, a browse tab for exploring a larger library, a favorites tab for saving the best ones, and settings for appearance and app support surfaces. Apple Intelligence personalization remains a key differentiator on supported iPhones, letting users generate a sharper refusal from typed or voice context without losing the app's punchy tone. Android and web support the core experience, while iOS gets the deepest native integrations through Home Screen Quick Actions and App Intent shortcuts.
 
 ### How It Works
 
-1. Open the app or launch a quick-copy entry point from a Home Screen Quick Action or Siri Shortcut.
-2. Pocket No fetches a fresh refusal from its server-side catalog, with a local fallback when the network is unavailable.
-3. If you want something more specific, open the Personalize composer and describe what you need to say no to, either by typing or by recording a short voice note on supported iPhones.
-4. Apple Intelligence generates a short, copy-ready refusal that fits your context without losing the app's punchy tone.
-5. The final line appears on screen over an animated dot-grid background, ready to copy with haptics or replace with another option.
+1. Open the main app or jump straight into a fast copy flow from a Home Screen Quick Action or Siri Shortcut on iOS.
+2. Pocket No fetches a fresh refusal from its server-side catalog, with a smaller local fallback when the network is unavailable.
+3. From the main tabs, users can browse more than 1,000 lines by category, search the library, and save favorites for reuse later.
+4. If the default line is too generic, the Personalize flow accepts typed or voice context on supported iPhones and uses Apple Intelligence to generate a more specific refusal.
+5. The final line appears over an animated dot-grid background, ready to copy with haptics, save to favorites, or replace with another option.
 
 ### Key Features
 
-- One-tap witty refusal generation and clipboard copy with haptic feedback
-- Apple Intelligence-powered personalization on supported iPhones
-- Text and voice input for generating more context-aware refusals
-- Custom Skia SKSL shader for the animated dot-grid background and matrix-style transitions
-- iOS Home Screen Quick Action for instant copy without opening the full app
-- iOS 18+ App Intent / Siri Shortcut powered by a native Swift target
-- Server-side API route (`GET /api/no`) with automatic fallback to a local catalog
-- Deep linking via `pocketno://` custom URL scheme
-- Light and dark theme with CSS variables and Uniwind
-- React Compiler enabled for a lean React Native UI layer
+- Instant refusal generation and clipboard copy with haptic feedback
+- Browse and search across a 1,000+ line refusal library
+- Favorites and recent-history flows stored on-device
+- Apple Intelligence personalization on supported iPhones from typed or voice input
+- Animated visual treatment powered by a custom Skia shader and matrix-style transitions
+- Native iOS entry points through Home Screen Quick Actions and an App Intent / Siri Shortcut target
+- Server-backed `GET /api/no` route with automatic fallback to a local catalog
+- Deep linking via the `pocketno://` custom URL scheme
+- System, light, and dark appearance options
+- Support and privacy surfaces for a more complete product shell
 
 ### Tech Stack
 
-- Expo 55 / React Native 0.83
-- Expo Router (typed file-system routing)
+- Expo 55 / React Native 0.83 / React 19
+- Expo Router (typed file-system routing and native tabs)
 - Uniwind (Tailwind CSS v4 for React Native)
 - React Native Reanimated 4
 - @shopify/react-native-skia (custom SKSL shader)
 - `@react-native-ai/apple` for Apple Intelligence availability, generation, and voice transcription
 - expo-quick-actions & @bacons/apple-targets (iOS native surfaces)
-- expo-haptics & expo-clipboard
+- expo-haptics, expo-clipboard, and Expo API routes
 
 ### Links
 
