@@ -1,13 +1,10 @@
-"use client";
-
-import { motion } from "motion/react";
 import {
   FileCode2,
   Atom,
   Rocket,
   Globe,
   Palette,
-  Rabbit
+  Package
 } from "lucide-react";
 
 const skills = [
@@ -16,27 +13,30 @@ const skills = [
   { name: "Expo", icon: Rocket },
   { name: "Next.js", icon: Globe },
   { name: "Tailwind", icon: Palette },
-  { name: "Bun", icon: Rabbit },
+  { name: "Bun", icon: Package },
 ];
 
 export function SkillsCard() {
   return (
-    <div className="h-full flex flex-col">
-      <h2 className="text-lg font-semibold mb-4">Tech Stack</h2>
-      <div className="grid grid-cols-3 gap-3 flex-1">
-        {skills.map((skill, i) => (
-          <motion.div
+    <div className="flex h-full flex-col">
+      <div className="mb-5 flex items-center justify-between gap-4">
+        <h2 className="text-lg font-semibold">Tech Stack</h2>
+        <span className="font-mono text-[0.65rem] uppercase text-muted-foreground/70">
+          06 modules
+        </span>
+      </div>
+
+      <div className="grid flex-1 grid-cols-3 gap-3">
+        {skills.map((skill) => (
+          <div
             key={skill.name}
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.6 + i * 0.05, duration: 0.3 }}
-            className="flex flex-col items-center justify-center gap-2 p-3 rounded-xl bg-muted/50 hover:bg-muted transition-colors"
+            className="nothing-tile min-h-[78px] flex-col justify-center gap-2 text-center"
           >
-            <skill.icon className="w-6 h-6 text-primary" />
-            <span className="text-xs font-medium text-muted-foreground">
+            <skill.icon className="h-5 w-5 text-foreground" />
+            <span className="text-xs font-semibold text-muted-foreground">
               {skill.name}
             </span>
-          </motion.div>
+          </div>
         ))}
       </div>
     </div>
