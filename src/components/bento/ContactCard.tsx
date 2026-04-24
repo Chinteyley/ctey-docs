@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "motion/react";
 import { Mail, Github, Twitter } from "lucide-react";
 import Link from "next/link";
 
@@ -26,23 +23,21 @@ const contacts = [
 
 export function ContactCard() {
   return (
-    <div className="h-full flex flex-col">
-      <h2 className="text-lg font-semibold mb-4">Get in Touch</h2>
+    <div className="flex h-full flex-col">
+      <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
+        <h2 className="text-lg font-semibold">Get in Touch</h2>
+        <span className="font-mono text-[0.65rem] uppercase text-muted-foreground/70">
+          Open channel
+        </span>
+      </div>
+
       <div className="flex flex-wrap gap-3">
-        {contacts.map((contact, i) => {
+        {contacts.map((contact) => {
           const content = (
-            <motion.div
-              key={contact.label}
-              initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.9 + i * 0.1, duration: 0.3 }}
-              className={`flex items-center gap-3 px-4 py-3 rounded-xl bg-muted/50 ${
-                contact.href ? "hover:bg-muted transition-colors cursor-pointer" : ""
-              }`}
-            >
-              <contact.icon className="w-4 h-4 text-primary" />
+            <span className="nothing-command">
+              <contact.icon className="h-4 w-4 text-foreground" />
               <span className="text-sm font-medium">{contact.label}</span>
-            </motion.div>
+            </span>
           );
 
           if (contact.href) {

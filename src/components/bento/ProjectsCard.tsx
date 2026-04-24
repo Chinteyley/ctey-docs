@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "motion/react";
 import { ArrowRight, Laptop, Smartphone, Brain, Monitor } from "lucide-react";
 import Link from "next/link";
 
@@ -9,13 +6,6 @@ const categoryIcons = {
   mobile: Smartphone,
   ml: Brain,
   mac: Monitor,
-};
-
-const categoryColors = {
-  web: "bg-blue-500/10 text-blue-500",
-  mobile: "bg-green-500/10 text-green-500",
-  ml: "bg-purple-500/10 text-purple-500",
-  mac: "bg-orange-500/10 text-orange-500",
 };
 
 const featuredProjects = [
@@ -41,47 +31,41 @@ const featuredProjects = [
 
 export function ProjectsCard() {
   return (
-    <div className="h-full flex flex-col">
-      <div className="flex items-center justify-between mb-4">
+    <div className="flex h-full flex-col">
+      <div className="mb-5 flex items-center justify-between gap-4">
         <h2 className="text-lg font-semibold">Featured Projects</h2>
         <Link
           href="/docs/projects"
-          className="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-1"
+          className="inline-flex min-h-10 items-center gap-1 rounded-full px-3 font-mono text-xs uppercase text-muted-foreground transition-[color,background-color,transform] duration-200 ease-[var(--ease-out)] hover:bg-foreground/5 hover:text-foreground active:scale-[0.96]"
         >
-          View all <ArrowRight className="w-3 h-3" />
+          View all <ArrowRight className="h-3 w-3" />
         </Link>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-3 flex-1">
-        {featuredProjects.map((project, i) => {
+      <div className="grid flex-1 grid-cols-1 gap-3 md:grid-cols-3">
+        {featuredProjects.map((project) => {
           const CategoryIcon = categoryIcons[project.category];
           return (
-            <motion.div
+            <Link
               key={project.title}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8 + i * 0.1, duration: 0.3 }}
+              href={project.href}
+              className="nothing-project group/project"
             >
-              <Link
-                href={project.href}
-                className="flex flex-col h-full p-4 rounded-xl bg-muted/50 hover:bg-muted transition-colors group"
-              >
-                <div className="flex items-center gap-2 mb-2">
-                  <span className={`p-1.5 rounded-lg ${categoryColors[project.category]}`}>
-                    <CategoryIcon className="w-3.5 h-3.5" />
-                  </span>
-                  <span className="text-xs font-medium text-muted-foreground capitalize">
-                    {project.category}
-                  </span>
-                </div>
-                <h3 className="font-semibold mb-1 group-hover:text-primary transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-xs text-muted-foreground line-clamp-2">
-                  {project.description}
-                </p>
-              </Link>
-            </motion.div>
+              <div className="mb-4 flex items-center justify-between gap-3">
+                <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-foreground text-background">
+                  <CategoryIcon className="h-4 w-4" />
+                </span>
+                <span className="font-mono text-[0.65rem] uppercase text-muted-foreground">
+                  {project.category}
+                </span>
+              </div>
+              <h3 className="mb-2 font-semibold transition-colors duration-200 ease-[var(--ease-out)] group-hover/project:text-[var(--nothing-red)]">
+                {project.title}
+              </h3>
+              <p className="line-clamp-3 text-pretty text-xs leading-5 text-muted-foreground">
+                {project.description}
+              </p>
+            </Link>
           );
         })}
       </div>

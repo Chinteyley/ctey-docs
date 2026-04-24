@@ -1,46 +1,39 @@
-"use client";
-
-import { motion } from "motion/react";
-
 export function HeroSection() {
   return (
-    <div className="flex flex-col justify-center h-full min-h-[280px]">
-      <motion.p
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2, duration: 0.4 }}
-        className="text-sm font-medium text-primary mb-2"
-      >
-        Hello, I&apos;m
-      </motion.p>
+    <div className="relative flex h-full min-h-[300px] flex-col justify-between overflow-hidden">
+      <div className="nothing-dot-field" aria-hidden="true" />
 
-      <motion.h1
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3, duration: 0.4 }}
-        className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4"
-      >
-        Chintey Ley
-      </motion.h1>
+      <div className="relative flex items-center justify-between gap-4">
+        <p className="nothing-kicker">
+          <span className="nothing-red-light" aria-hidden="true" />
+          CTEY / 001
+        </p>
+        <p className="font-mono text-[0.65rem] uppercase text-muted-foreground/70">
+          TypeScript + Native UI
+        </p>
+      </div>
 
-      <motion.p
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4, duration: 0.4 }}
-        className="text-xl md:text-2xl text-muted-foreground font-medium mb-4"
-      >
-        Software Developer
-      </motion.p>
+      <div className="relative space-y-5">
+        <div>
+          <p className="mb-2 font-mono text-xs uppercase text-muted-foreground">
+            Software Developer
+          </p>
+          <h1 className="max-w-[9ch] text-balance text-5xl font-black leading-[0.9] tracking-normal md:text-6xl lg:text-7xl">
+            Chintey Ley
+          </h1>
+        </div>
 
-      <motion.p
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5, duration: 0.4 }}
-        className="text-base text-muted-foreground max-w-md"
-      >
-        Building digital experiences with TypeScript, React & React Native.
-        Let&apos;s create something amazing together.
-      </motion.p>
+        <p className="max-w-md text-pretty text-base leading-7 text-muted-foreground md:text-lg">
+          Building sharp web and mobile products with TypeScript, React,
+          Next.js, and Expo.
+        </p>
+      </div>
+
+      <div className="relative flex flex-wrap gap-2 pt-8 font-mono text-[0.68rem] uppercase text-muted-foreground">
+        <span className="nothing-chip">React Native</span>
+        <span className="nothing-chip">Next.js</span>
+        <span className="nothing-chip">Open Source</span>
+      </div>
     </div>
   );
 }

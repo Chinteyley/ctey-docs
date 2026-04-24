@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import { ReactNode } from "react";
 
 interface BentoCellProps {
@@ -11,20 +11,25 @@ interface BentoCellProps {
 }
 
 export function BentoCell({ children, index, className }: BentoCellProps) {
+  const reduceMotion = useReducedMotion();
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20, scale: 0.95 }}
-      animate={{ opacity: 1, y: 0, scale: 1 }}
+      initial={
+        reduceMotion
+          ? { opacity: 1 }
+          : {
+              opacity: 0,
+              transform: "translate3d(0, 18px, 0) scale(0.97)",
+            }
+      }
+      animate={{ opacity: 1, transform: "translate3d(0, 0, 0) scale(1)" }}
       transition={{
-        duration: 0.5,
-        delay: index * 0.1,
-        ease: [0.25, 0.46, 0.45, 0.94],
+        duration: reduceMotion ? 0 : 0.42,
+        delay: reduceMotion ? 0 : index * 0.07,
+        ease: [0.23, 1, 0.32, 1],
       }}
-      className={cn(
-        "rounded-2xl border border-border bg-card/80 backdrop-blur-md p-6",
-        "hover:border-primary/30 transition-colors duration-300",
-        className
-      )}
+      className={cn("nothing-panel group/bento p-6", className)}
     >
       {children}
     </motion.div>
@@ -40,7 +45,7 @@ export function BentoGrid({ children, className }: BentoGridProps) {
   return (
     <div
       className={cn(
-        "grid grid-cols-1 md:grid-cols-6 lg:grid-cols-12 gap-4 w-full max-w-6xl mx-auto",
+        "grid w-full max-w-6xl grid-cols-1 gap-4 md:grid-cols-6 lg:grid-cols-12",
         className
       )}
     >
