@@ -232,6 +232,46 @@
     box-shadow: 0 0 22px color-mix(in srgb, var(--nothing-red) 60%, transparent);
   }
 
+  .ctey-logo-motion {
+    overflow: visible;
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: ctey-logo-settle 900ms var(--ease-out) both;
+    transition:
+      filter 180ms var(--ease-out),
+      transform 180ms var(--ease-out);
+  }
+
+  .ctey-logo-line {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: ctey-logo-draw-in 860ms var(--ease-out) both;
+  }
+
+  .ctey-logo-line-left {
+    animation-delay: 0ms;
+  }
+
+  .ctey-logo-line-center {
+    stroke: currentColor;
+    animation-delay: 180ms;
+  }
+
+  .ctey-logo-soft .ctey-logo-line-center {
+    stroke: currentColor;
+  }
+
+  .ctey-logo-line-right {
+    animation-delay: 360ms;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    a:hover .ctey-logo-motion {
+      filter: drop-shadow(0 0 10px color-mix(in srgb, currentColor 28%, transparent));
+      transform: translate3d(0, -1px, 0) scale(1.04);
+    }
+  }
+
   .nothing-chip {
     display: inline-flex;
     min-height: 2rem;
@@ -294,8 +334,42 @@
     .nothing-panel::after,
     .nothing-tile,
     .nothing-command,
-    .nothing-project {
+    .nothing-project,
+    .ctey-logo-motion,
+    .ctey-logo-line {
+      animation: none;
       transition-duration: 0ms;
     }
+
+    .ctey-logo-line {
+      stroke-dashoffset: 0;
+    }
+  }
+}
+
+@keyframes ctey-logo-draw-in {
+  0%,
+  10% {
+    stroke-dashoffset: 1;
+    opacity: 0.38;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes ctey-logo-settle {
+  0% {
+    filter: drop-shadow(0 0 14px color-mix(in srgb, currentColor 24%, transparent));
+    opacity: 0.72;
+    transform: translate3d(0, 1px, 0) scale(0.96);
+  }
+
+  100% {
+    filter: drop-shadow(0 0 0 color-mix(in srgb, currentColor 0%, transparent));
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
   }
 }

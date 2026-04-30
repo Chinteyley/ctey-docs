@@ -1,7 +1,13 @@
+import { AnimatedLogo } from '@/components/AnimatedLogo';
+
 export function HeroSection() {
   return (
     <div className="relative flex h-full min-h-[300px] flex-col justify-between overflow-hidden">
       <div className="nothing-dot-field" aria-hidden="true" />
+      <AnimatedLogo
+        size={84}
+        className="ctey-logo-soft pointer-events-none absolute right-8 top-14 hidden size-24 text-foreground/10 md:block"
+      />
 
       <div className="relative flex items-center justify-between gap-4">
         <p className="nothing-kicker">
