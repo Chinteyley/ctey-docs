@@ -15,12 +15,12 @@ import { buttonVariants } from 'fumadocs-ui/components/ui/button';
 import { useSearchContext } from 'fumadocs-ui/contexts/search';
 import Link from 'fumadocs-core/link';
 import { usePathname } from 'fumadocs-core/framework';
-import Image from 'next/image';
 import type { Root as PageTreeRoot } from 'fumadocs-core/page-tree';
 import { Languages } from 'lucide-react';
 import { clsx } from 'clsx';
 import type { ReactNode } from 'react';
 import { useMemo } from 'react';
+import { AnimatedLogo } from '@/components/AnimatedLogo';
 
 type FluxDocsLayoutProps = {
   tree: PageTreeRoot;
@@ -121,13 +121,7 @@ export function FluxDocsLayout({ tree }: FluxDocsLayoutProps) {
                   href={props.nav?.url ?? '/'}
                   className="inline-flex items-center gap-2.5 rounded-md transition-opacity hover:opacity-85"
                 >
-                  <Image
-                    src="/ctey.png"
-                    alt="CTEY logo"
-                    width={28}
-                    height={28}
-                    className="size-7 rounded-sm object-contain dark:invert dark:brightness-0"
-                  />
+                  <AnimatedLogo size={28} className="size-7 shrink-0" />
                   {slots.navTitle ? (
                     <slots.navTitle className="inline-flex items-center gap-2.5 text-sm font-semibold" />
                   ) : null}
