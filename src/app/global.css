@@ -253,12 +253,12 @@
   }
 
   .ctey-logo-line-center {
-    stroke: var(--nothing-red);
+    stroke: currentColor;
     animation-delay: 180ms;
   }
 
   .ctey-logo-soft .ctey-logo-line-center {
-    stroke: color-mix(in srgb, currentColor 48%, var(--nothing-red) 52%);
+    stroke: currentColor;
   }
 
   .ctey-logo-line-right {
@@ -267,7 +267,7 @@
 
   @media (hover: hover) and (pointer: fine) {
     a:hover .ctey-logo-motion {
-      filter: drop-shadow(0 0 10px color-mix(in srgb, var(--nothing-red) 38%, transparent));
+      filter: drop-shadow(0 0 10px color-mix(in srgb, currentColor 28%, transparent));
       transform: translate3d(0, -1px, 0) scale(1.04);
     }
   }
@@ -362,13 +362,13 @@
 
 @keyframes ctey-logo-settle {
   0% {
-    filter: drop-shadow(0 0 14px color-mix(in srgb, var(--nothing-red) 35%, transparent));
+    filter: drop-shadow(0 0 14px color-mix(in srgb, currentColor 24%, transparent));
     opacity: 0.72;
     transform: translate3d(0, 1px, 0) scale(0.96);
   }
 
   100% {
-    filter: drop-shadow(0 0 0 color-mix(in srgb, var(--nothing-red) 0%, transparent));
+    filter: drop-shadow(0 0 0 color-mix(in srgb, currentColor 0%, transparent));
     opacity: 1;
     transform: translate3d(0, 0, 0) scale(1);
   }
