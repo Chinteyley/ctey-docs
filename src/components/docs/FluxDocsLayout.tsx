@@ -119,13 +119,14 @@ export function FluxDocsLayout({ tree }: FluxDocsLayoutProps) {
               <div className="inline-flex items-center gap-2.5 text-sm font-semibold">
                 <Link
                   href={props.nav?.url ?? '/'}
-                  className="inline-flex items-center gap-2.5 rounded-md transition-opacity hover:opacity-85"
+                  className="inline-flex items-center rounded-md transition-opacity hover:opacity-85"
+                  aria-label="Home"
                 >
                   <AnimatedLogo size={28} className="size-7 shrink-0" />
-                  {slots.navTitle ? (
-                    <slots.navTitle className="inline-flex items-center gap-2.5 text-sm font-semibold" />
-                  ) : null}
                 </Link>
+                {slots.navTitle ? (
+                  <slots.navTitle className="inline-flex items-center gap-2.5 text-sm font-semibold" />
+                ) : null}
 
                 {activeTab ? (
                   <span className="inline-flex items-center gap-1.5 rounded-full border border-fd-border/80 bg-fd-secondary/70 px-2 py-0.5 text-[11px] font-medium text-fd-muted-foreground">
