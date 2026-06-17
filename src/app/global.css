@@ -152,7 +152,7 @@
     box-shadow:
       0 1px 0 var(--nothing-panel-shine) inset,
       0 20px 60px var(--nothing-panel-shadow);
-    transition-property: border-color, box-shadow, transform;
+    transition-property: border-color, box-shadow;
     transition-duration: 220ms;
     transition-timing-function: var(--ease-out);
   }
@@ -364,12 +364,10 @@
   0% {
     filter: drop-shadow(0 0 14px color-mix(in srgb, currentColor 24%, transparent));
     opacity: 0.72;
-    transform: translate3d(0, 1px, 0) scale(0.96);
   }
 
   100% {
     filter: drop-shadow(0 0 0 color-mix(in srgb, currentColor 0%, transparent));
     opacity: 1;
-    transform: translate3d(0, 0, 0) scale(1);
   }
 }
