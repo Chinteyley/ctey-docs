@@ -18,12 +18,9 @@ export function BentoCell({ children, index, className }: BentoCellProps) {
       initial={
         reduceMotion
           ? { opacity: 1 }
-          : {
-              opacity: 0,
-              transform: "translate3d(0, 18px, 0) scale(0.97)",
-            }
+          : { opacity: 0, y: 18, scale: 0.97 }
       }
-      animate={{ opacity: 1, transform: "translate3d(0, 0, 0) scale(1)" }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{
         duration: reduceMotion ? 0 : 0.42,
         delay: reduceMotion ? 0 : index * 0.07,
