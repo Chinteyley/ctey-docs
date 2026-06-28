@@ -47,20 +47,28 @@ export async function generateMetadata({
   const page = source.getPage(slug);
   if (!page) notFound();
   const image = ['/og/docs', ...slug, 'image.png'].join('/');
+
+  // The Bac II countdown has a dedicated live app. Point search authority to it
+  // so the app — not this docs page — ranks for "bacii countdown".
+  const canonical =
+    slug.join('/') === 'projects/bacii-countdown'
+      ? 'https://bacii.ctey.dev'
+      : `https://ctey.dev/docs/${slug.join('/')}`;
+
   return {
     title: page.data.title,
     description: page.data.description,
     openGraph: {
       images: image,
       siteName: page.data.title,
-      url: `https://ctey.dev/docs/${slug.join('/')}`,
+      url: canonical,
     },
     twitter: {
       card: 'summary_large_image',
       images: image,
     },
     alternates: {
-      canonical: `https://ctey.dev/docs/${slug.join('/')}`,
+      canonical,
     },
   };
 }
