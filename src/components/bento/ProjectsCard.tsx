@@ -23,7 +23,7 @@ const featuredProjects = [
   },
   {
     title: "Neko",
-    description: "Menu bar kitten that follows your mouse on macOS",
+    description: "Free menu bar kitten that follows your mouse on macOS",
     category: "mac" as const,
     href: "/docs/projects/neko",
   },

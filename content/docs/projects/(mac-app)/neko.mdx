@@ -1,13 +1,13 @@
 ---
 title: Neko - Menu Bar Kitten
-description: A tiny macOS menu bar app featuring a pixel sprite kitten that follows your mouse cursor across the screen.
+description: A free macOS menu bar app featuring a pixel sprite kitten that follows your mouse cursor across the screen.
 icon: Cat
 ---
 import { GitHubRepoInfo } from '@/components/docs/GitHubRepoInfo';
 
 ## Overview
 
-Neko is a lightweight macOS menu bar application that places an animated pixel sprite kitten on your screen. The kitten follows your mouse cursor in real time, staying always on top of other windows — including fullscreen apps. It runs entirely from the menu bar with no Dock icon, making it an unobtrusive desktop companion.
+Neko is a free, lightweight macOS menu bar application that places an animated pixel sprite kitten on your screen. The kitten follows your mouse cursor in real time, staying always on top of other windows — including fullscreen apps. It runs entirely from the menu bar with no Dock icon, making it an unobtrusive desktop companion. The latest release is v1.6.1. It supports macOS 12 or later on Apple silicon and Intel, and release builds are signed with Developer ID and notarized by Apple.
 
 ### Features
 
@@ -16,7 +16,9 @@ Neko is a lightweight macOS menu bar application that places an animated pixel s
 - Menu bar only — no Dock icon cluttering your workspace
 - Three size presets: Small (16 px), Medium (24 px), Large (32 px)
 - Three speed settings: Slow, Normal, Fast
-- Global shortcut `Cmd+Opt+P` to pause or resume
+- Hide Neko from the menu bar to park the kitten without quitting
+- Launch at Login on macOS 13 and later
+- Quit with `Cmd+Q`
 - Settings persist between launches
 
 ### Tech Stack
@@ -24,14 +26,21 @@ Neko is a lightweight macOS menu bar application that places an animated pixel s
 - Swift
 - SwiftUI
 - Xcode
+- AppKit
 
 ### How It Works
 
-The app uses a timer-driven animation loop running at 0.16-second intervals. A state machine determines the kitten's current animation based on its position relative to the mouse cursor — idle, walking, running, or scratching. The sprite sheet contains 5 columns and 6 rows of frames at a base resolution of 16x16 pixels, scaled up with nearest-neighbor interpolation to keep the pixel art crisp at larger sizes.
+The app uses a timer-driven animation loop. The interval follows the selected speed: Slow (0.24 s), Normal (0.16 s), or Fast (0.10 s). A state machine picks the current sprite from the kitten's position relative to the mouse — idle, alert, thinking, grooming, yawning, sleeping, scratching, or walking in eight directions. The sprite sheet is a 5-by-6 grid of 16x16 frames, scaled with nearest-neighbor interpolation so the pixel art stays crisp at larger sizes.
 
 ### What I Learned
 
-Building Neko deepened my understanding of macOS app development outside the typical window-based paradigm. Working with menu bar apps, always-on-top windows, and global keyboard shortcuts required diving into AppKit APIs that most SwiftUI tutorials don't cover. The animation state machine was a fun exercise in modeling behavior through discrete states and transitions.
+Building Neko deepened my understanding of macOS app development outside the typical window-based paradigm. Working with menu bar apps, always-on-top windows, and login items required diving into AppKit APIs that most SwiftUI tutorials don't cover. The animation state machine was a fun exercise in modeling behavior through discrete states and transitions.
+
+### Links
+
+- [Live site](https://neko.ctey.dev/)
+- [Download (GitHub Releases)](https://github.com/Chinteyley/neko/releases/latest)
+- [Landing page source](https://github.com/Chinteyley/neko-web)
 
 <GitHubRepoInfo
     owner="chinteyley"

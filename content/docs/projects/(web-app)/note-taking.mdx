@@ -1,6 +1,6 @@
 ---
 title: Note-Taking Web Application
-description: A web application for managing and organizing personal notes with AI-powered features, built with Angular, MongoDB, and OpenAI.
+description: A web application for managing personal notes with Markdown preview and optional OpenAI title generation, built with Angular, MongoDB, and Express.
 icon: NotebookPen
 ---
 import { Step, Steps } from 'fumadocs-ui/components/steps';
@@ -9,19 +9,18 @@ import { GitHubRepoInfo } from '@/components/docs/GitHubRepoInfo';
 
 
 ## Overview
-A note-taking web application that allows users to manage and organize their personal notes. Features a clean UI for creating, editing, deleting, and categorizing notes. The app also integrates AI-powered features through the OpenAI API, allowing users to generate summaries, expand on ideas, and get writing suggestions directly within their notes. It was built as a full-stack project to explore the MEAN stack combined with modern deployment practices.
+A note-taking web application that allows users to manage and organize their personal notes. Features a clean UI for creating, editing, and deleting notes, with a live Markdown preview in the editor. The backend can generate a short title from note content through the OpenAI API. It was built as a full-stack project to explore Angular with an Express and MongoDB API, plus Docker and NGINX for deployment.
 
 ### AI Features
 
-The application integrates with the OpenAI API to provide intelligent writing assistance directly inside the note editor. Users can highlight a section of text and request an AI-generated summary, ask the AI to expand on a brief idea into a full paragraph, or get grammar and style suggestions. The AI responses are streamed back to the frontend so users see results appear in real-time rather than waiting for a complete response. These features are designed to help users capture and refine their thoughts more efficiently without switching to a separate tool.
+The Express API uses the OpenAI SDK (`gpt-4o-mini`) to turn note content into a short title or summary, including a dedicated "Generate Title" action in the editor. If the model call fails, the server falls back to a truncated excerpt. There is no streamed writing assistant, no expand-or-rewrite flow, and no folder or tag system in the current app.
 
 ### Key Features
-- Create, edit, and delete notes with a rich text editor
-- Categorize notes into custom folders and tags for easy organization
-- AI-powered writing assistance including summarization, expansion, and style suggestions via OpenAI
+- Create, edit, and delete notes
+- Markdown editor with a live preview
+- Optional AI-generated titles and short summaries via OpenAI
 - Clean and intuitive UI with responsive design for desktop and mobile use
-- User authentication with secure login and registration
-- Real-time AI response streaming for a smooth writing experience
+- User authentication with login and registration
 
 ### Tech Stack
 - Angular
@@ -43,13 +42,10 @@ The application is containerized with Docker for consistent deployment across en
         Register or log in.
     </Step>
     <Step>
-        Create and organize your notes into categories.
+        Create a note. Leave the title empty or use Generate Title to let the API write one from the content.
     </Step>
     <Step>
-        Use the AI assistant to summarize, expand, or refine your writing.
-    </Step>
-    <Step>
-        Edit or delete notes as needed.
+        Preview the Markdown, then save. Edit or delete notes from the card grid.
     </Step>
 </Steps>
 
@@ -58,5 +54,5 @@ The application is containerized with Docker for consistent deployment across en
 
 <GitHubRepoInfo
     owner="chinteyley"
-    repo="note-taking"
+    repo="note_taking"
 />
