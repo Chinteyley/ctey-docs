@@ -1,4 +1,5 @@
 import React from 'react';
+import { BRAND_HOME_URL, SITE_URL } from '@/lib/site';
 
 interface JsonLdProps {
   data: Record<string, unknown>;
@@ -17,22 +18,16 @@ export function WebsiteJsonLd() {
   const data = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    '@id': 'https://ctey.dev#website',
-    name: 'CTEY',
-    url: 'https://ctey.dev', // Replace with your actual domain
-    description: 'A documentation site showcasing projects, skills, and expertise.',
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: {
-        '@type': 'EntryPoint',
-        urlTemplate: 'https://ctey.dev/search?q={search_term_string}' // Replace with your actual search URL
-      },
-      'query-input': 'required name=search_term_string'
-    },
+    '@id': `${SITE_URL}#website`,
+    name: 'Chintey Ley project docs',
+    url: SITE_URL,
+    description:
+      'Project documentation for Chintey Ley, covering TypeScript, Next.js, React, and macOS work.',
     sameAs: [
+      BRAND_HOME_URL,
       'https://github.com/chinteyley',
-      'https://twitter.com/kimteyley'
-    ]
+      'https://x.com/kimteyley',
+    ],
   };
 
   return <JsonLd data={data} />;
@@ -42,27 +37,34 @@ export function PersonJsonLd() {
   const data = {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    '@id': 'https://ctey.dev#chinteyley',
-    name: 'Chintey Ley', // Replace with your actual name
-    url: 'https://ctey.dev', // Replace with your actual domain
+    '@id': `${SITE_URL}#chinteyley`,
+    name: 'Chintey Ley',
+    url: BRAND_HOME_URL,
     sameAs: [
-      'https://github.com/chinteyley', // Replace with your actual GitHub URL
-      'https://linkedin.com/in/chinteyley', // Replace with your actual LinkedIn URL
-      'https://twitter.com/kimteyley' // Replace with your actual Twitter URL
+      BRAND_HOME_URL,
+      SITE_URL,
+      'https://github.com/chinteyley',
+      'https://www.linkedin.com/in/chinteyley',
+      'https://x.com/kimteyley',
     ],
-    jobTitle: 'Software Developer', // Replace with your actual job title
+    jobTitle: 'Software Developer',
     worksFor: {
       '@type': 'Organization',
-      name: 'CTEY',
-      url: 'https://ctey.dev'
+      name: 'Chintey',
+      url: BRAND_HOME_URL,
     },
     knowsAbout: [
-      "TypeScript", "React", "Next.js", "React Native",
-      "Node.js", "Python", "Prisma", "Expo",
-        "Supabase", "PostgreSQL", "Tailwind CSS", "Flutter",
+      'TypeScript',
+      'React',
+      'Next.js',
+      'React Native',
+      'macOS',
+      'Node.js',
+      'Python',
     ],
-    image: 'https://ctey.dev/ctey.png', // Replace with your actual profile image
-    description: 'Software developer specializing in web development and machine learning.'
+    image: `${SITE_URL}/ctey.png`,
+    description:
+      'Software developer writing project docs for TypeScript, Next.js, React, and macOS work.',
   };
 
   return <JsonLd data={data} />;
@@ -76,8 +78,8 @@ export function BreadcrumbJsonLd({ items }: { items: { name: string; url: string
       '@type': 'ListItem',
       position: index + 1,
       name: item.name,
-      item: item.url
-    }))
+      item: item.url,
+    })),
   };
 
   return <JsonLd data={data} />;
@@ -89,7 +91,7 @@ export function ProjectJsonLd({
   url,
   image,
   datePublished,
-  author
+  author,
 }: {
   name: string;
   description: string;
@@ -108,13 +110,13 @@ export function ProjectJsonLd({
     datePublished,
     author: {
       '@type': 'Person',
-      name: author
+      name: author,
     },
     programmingLanguage: {
       '@type': 'ComputerLanguage',
-      name: 'Multiple'
+      name: 'Multiple',
     },
-    runtimePlatform: 'Web'
+    runtimePlatform: 'Web',
   };
 
   return <JsonLd data={data} />;

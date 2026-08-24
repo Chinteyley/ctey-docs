@@ -1,7 +1,7 @@
 {
   "name": "CTEY",
   "short_name": "CTEY",
-  "description": "Project documentation and portfolio by Chintey Ley",
+  "description": "Project docs by Chintey Ley for TypeScript, Next.js, React, and macOS work",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",

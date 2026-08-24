@@ -8,6 +8,7 @@ import {
 import { notFound } from 'next/navigation';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
 import { getMDXComponents } from '@/mdx-components';
+import { SITE_URL } from '@/lib/site';
 
 export default async function Page(props: {
   params: Promise<{ slug?: string[] }>;
@@ -53,14 +54,14 @@ export async function generateMetadata({
     openGraph: {
       images: image,
       siteName: page.data.title,
-      url: `https://ctey.dev/docs/${slug.join('/')}`,
+      url: `${SITE_URL}/docs/${slug.join('/')}`,
     },
     twitter: {
       card: 'summary_large_image',
       images: image,
     },
     alternates: {
-      canonical: `https://ctey.dev/docs/${slug.join('/')}`,
+      canonical: `${SITE_URL}/docs/${slug.join('/')}`,
     },
   };
 }

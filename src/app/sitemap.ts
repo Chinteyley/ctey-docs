@@ -1,25 +1,31 @@
 import { source } from '@/lib/source';
 import { MetadataRoute } from 'next';
+import { SITE_URL } from '@/lib/site';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-	const baseUrl = 'https://ctey.dev'; // Replace with your actual domain
 	const currentDate = new Date();
 
 	const rootEntry: MetadataRoute.Sitemap[number] = {
-		url: `${baseUrl}`,
+		url: SITE_URL,
 		lastModified: currentDate,
 		changeFrequency: 'monthly',
 		priority: 1.0,
 	};
 
-	const docsEntries = source.getPages().map<MetadataRoute.Sitemap[number]>(
-		(page) => ({
-			url: `${baseUrl}${page.url}`,
-			lastModified: currentDate,
-			changeFrequency: 'monthly',
-			priority: page.url === '/docs' ? 0.9 : 0.7,
-		}),
-	);
+	let docsEntries: MetadataRoute.Sitemap = [];
+
+	try {
+		docsEntries = source.getPages().map<MetadataRoute.Sitemap[number]>(
+			(page) => ({
+				url: `${SITE_URL}${page.url}`,
+				lastModified: currentDate,
+				changeFrequency: 'monthly',
+				priority: page.url === '/docs' ? 0.9 : 0.7,
+			}),
+		);
+	} catch {
+		docsEntries = [];
+	}
 
 	return [rootEntry, ...docsEntries];
 }

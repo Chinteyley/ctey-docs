@@ -1,3 +1,5 @@
+import { BRAND_HOME_URL } from "@/lib/site";
+
 export function HeroSection() {
   return (
     <div className="relative flex h-full min-h-[300px] flex-col justify-between overflow-hidden">
@@ -24,8 +26,15 @@ export function HeroSection() {
         </div>
 
         <p className="max-w-md text-pretty text-base leading-7 text-muted-foreground md:text-lg">
-          Building sharp web and mobile products with TypeScript, React,
-          Next.js, and Expo.
+          Project docs for TypeScript, Next.js, React, and macOS work.
+          Brand home lives at{' '}
+          <a
+            href={BRAND_HOME_URL}
+            className="underline underline-offset-4 decoration-foreground/25 transition-colors hover:text-foreground hover:decoration-foreground/60"
+          >
+            chintey.com
+          </a>
+          .
         </p>
       </div>
 
