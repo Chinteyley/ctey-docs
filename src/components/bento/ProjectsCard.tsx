@@ -1,6 +1,5 @@
 import { ArrowRight, Laptop, Smartphone, Brain, Monitor } from "lucide-react";
 import Link from "next/link";
-import { BACII_LIVE_URL } from "@/lib/seo";
 
 const categoryIcons = {
   web: Laptop,
@@ -10,13 +9,6 @@ const categoryIcons = {
 };
 
 const featuredProjects = [
-  {
-    title: "Bac II Countdown",
-    description: "Live countdown for Cambodia's Bac II exam",
-    category: "web" as const,
-    href: "/docs/projects/bacii-countdown",
-    liveUrl: BACII_LIVE_URL,
-  },
   {
     title: "Jomnouy",
     description: "AI-powered Baccalaureate prep platform",
