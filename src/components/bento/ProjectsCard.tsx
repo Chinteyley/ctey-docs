@@ -53,7 +53,7 @@ export function ProjectsCard() {
         </Link>
       </div>
 
-      <div className="grid flex-1 grid-cols-1 gap-3 sm:grid-cols-2">
+      <div className="grid flex-1 grid-cols-1 gap-3 md:grid-cols-2">
         {featuredProjects.map((project) => {
           const CategoryIcon = categoryIcons[project.category];
           return (
