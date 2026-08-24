@@ -1,8 +1,6 @@
 import { SITE_URL } from '@/lib/site';
 
 export const BACII_LIVE_URL = 'https://bacii.ctey.dev';
-export const BACII_CANONICAL = 'https://bacii.ctey.dev/';
-export const BACII_DOCS_SLUG = 'projects/bacii-countdown';
 
 const SEO_EXCLUDED_PROJECT_SLUGS = ['personality-quiz', 'clockedin'] as const;
 
@@ -34,35 +32,4 @@ export function docsPageUrl(slug: string[]): string {
   }
 
   return `${SITE_URL}/docs/${slug.join('/')}`;
-}
-
-export function readFrontmatterCanonical(data: unknown): string | undefined {
-  if (typeof data !== 'object' || data === null || !('canonical' in data)) {
-    return undefined;
-  }
-
-  const canonical = data.canonical;
-  if (typeof canonical !== 'string' || canonical.length === 0) {
-    return undefined;
-  }
-
-  return canonical;
-}
-
-export function resolveDocsCanonical({
-  slug,
-  frontmatterCanonical,
-}: {
-  slug: string[];
-  frontmatterCanonical?: string;
-}): string {
-  if (frontmatterCanonical && frontmatterCanonical.length > 0) {
-    return frontmatterCanonical;
-  }
-
-  if (slug.join('/') === BACII_DOCS_SLUG) {
-    return BACII_CANONICAL;
-  }
-
-  return docsPageUrl(slug);
 }
