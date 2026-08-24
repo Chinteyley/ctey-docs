@@ -11,14 +11,14 @@ const categoryIcons = {
 const featuredProjects = [
   {
     title: "Jomnouy",
-    description: "AI-powered Baccalaureate prep platform",
+    description: "Khmer and English Bac prep with Gemini, OCR, and PayWay",
     category: "web" as const,
     href: "/docs/projects/jomnouy",
     liveUrl: "https://jomnouy.me",
   },
   {
     title: "Pocket No",
-    description: "iOS-first refusal app with browse, favorites, and quick-copy shortcuts",
+    description: "iOS refusal app with copy, a line library, favorites, and Apple Intelligence",
     category: "mobile" as const,
     href: "/docs/projects/pocket-no",
     liveUrl: "https://pocket-no.ctey.dev",
