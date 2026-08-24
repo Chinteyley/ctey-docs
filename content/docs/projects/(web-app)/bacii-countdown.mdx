@@ -1,35 +1,32 @@
 ---
-title: BacII Countdown Timer
-description: A countdown web application that helps Cambodian students track important BacII exam dates with a clean, responsive countdown timer interface.
+title: Bac II Countdown
+description: Project notes for the Bac II exam countdown I built for Cambodian students. The live timer is at bacii.ctey.dev.
 icon: Clock
+canonical: https://bacii.ctey.dev/
 ---
 
 import { GitHubRepoInfo } from '@/components/docs/GitHubRepoInfo';
 
+**Live countdown:** [https://bacii.ctey.dev](https://bacii.ctey.dev)
 
-## Overview
-A countdown web application that helps Cambodian students keep track of their BacII exam date. BacII, short for Baccalaureate II, is Cambodia's national high school exit examination that all Grade 12 students must pass to earn their diploma and qualify for university admission. The exam is a significant milestone in every Cambodian student's academic journey, and the weeks leading up to it are filled with intensive preparation. This app provides a simple, always-visible countdown so students can stay aware of exactly how much time remains before their exam day.
+This page is the write-up. The timer lives on its own site.
 
-### Why I Built This
+## Why I built this
 
-As a student who went through the BacII preparation process, I understood the anxiety and time pressure that comes with this exam. Many students lose track of how quickly the exam date approaches while juggling study schedules across multiple subjects. I wanted to create a lightweight, distraction-free tool that students could bookmark and check daily to stay motivated and on schedule. The app intentionally avoids unnecessary features to keep the focus entirely on the countdown itself, serving as a constant visual reminder to make the most of each remaining day.
+Bac II is Cambodia's national Grade 12 exam. You need it for a diploma and for university, so the date sits in the back of your head for months. I went through that year. You study, you lose a week, and suddenly the exam is closer than it felt.
 
-### Key Features
-- Live countdown timer displaying days, hours, minutes, and seconds until the BacII exam
-- Clean and intuitive UI with a focused design that avoids distractions
-- Fully responsive design that works on phones, tablets, and desktops
-- Smooth animations for an engaging visual experience
-- Lightweight and fast-loading so students on slow connections can access it easily
+I wanted a page you could bookmark and open when you needed a reminder that the date is real. Not a study planner. Not another dashboard. Just the time left.
 
-### Tech Stack
-- Next.js
-- Tailwind CSS
-- ShadCN
-- Motion
+## What I built
 
-### Links
-- [Live Demo](https://bacii.ctey.dev)
-- [GitHub Repository](https://github.com/chinteyley/bacii_countdown)
+A small Next.js site that counts down to August 10, 2026 at 07:00 GMT+7. It shows days, hours, minutes, and seconds. The layout stays quiet on purpose so the numbers are the only thing asking for attention.
+
+It works on a phone. NumberFlow ticks the digits. Tailwind and ShadCN handle the rest.
+
+## Links
+
+- **Live countdown:** [https://bacii.ctey.dev](https://bacii.ctey.dev)
+- [Source on GitHub](https://github.com/chinteyley/bacii_countdown)
 
 <GitHubRepoInfo
     owner="chinteyley"

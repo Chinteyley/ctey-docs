@@ -8,7 +8,7 @@ import {
 import { notFound } from 'next/navigation';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
 import { getMDXComponents } from '@/mdx-components';
-import { SITE_URL } from '@/lib/site';
+import { docsPageUrl, isSeoExcludedSlug } from '@/lib/seo';
 
 export default async function Page(props: {
   params: Promise<{ slug?: string[] }>;
@@ -48,20 +48,29 @@ export async function generateMetadata({
   const page = source.getPage(slug);
   if (!page) notFound();
   const image = ['/og/docs', ...slug, 'image.png'].join('/');
+  const pageUrl = docsPageUrl(slug);
+  const excluded = isSeoExcludedSlug(slug);
+
   return {
     title: page.data.title,
     description: page.data.description,
+    robots: excluded
+      ? {
+          index: false,
+          follow: true,
+        }
+      : undefined,
     openGraph: {
       images: image,
       siteName: page.data.title,
-      url: `${SITE_URL}/docs/${slug.join('/')}`,
+      url: pageUrl,
     },
     twitter: {
       card: 'summary_large_image',
       images: image,
     },
     alternates: {
-      canonical: `${SITE_URL}/docs/${slug.join('/')}`,
+      canonical: pageUrl,
     },
   };
 }
