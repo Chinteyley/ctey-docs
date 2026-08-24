@@ -1,5 +1,6 @@
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
 import { AnimatedLogo } from '@/components/AnimatedLogo';
+import { BRAND_HOME_URL } from '@/lib/site';
 /**
  * Shared layout configurations
  *
@@ -26,7 +27,12 @@ export const baseOptions: BaseLayoutProps = {
         {
             text: 'Contacts',
             url: '/docs/contacts',
-        }
+        },
+        {
+            text: 'chintey.com',
+            url: BRAND_HOME_URL,
+            external: true,
+        },
         ],
     githubUrl:"https://github.com/chinteyley"
 };

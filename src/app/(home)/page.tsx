@@ -5,14 +5,17 @@ import { SkillsCard } from "@/components/bento/SkillsCard";
 import { AboutCard } from "@/components/bento/AboutCard";
 import { ProjectsCard } from "@/components/bento/ProjectsCard";
 import { ContactCard } from "@/components/bento/ContactCard";
+import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Chintey Ley - Software Developer",
+  title: {
+    absolute: "Chintey Ley - Software Developer",
+  },
   description:
-    "Chintey (Chintey Ley), a Software Developer specializing in TypeScript, React, and React Native. Passionate about Anime and Open Source.",
+    "Project docs for Chintey Ley. TypeScript, Next.js, React, and macOS write-ups, with live links for Neko, Pocket No, and Jomnouy.",
   openGraph: {
-    url: "https://ctey.dev/",
-    siteName: "Chintey Ley - Software Developer",
+    url: `${SITE_URL}/`,
+    siteName: "Chintey Ley",
     images: "/og/image.png",
   },
   twitter: {
@@ -20,7 +23,7 @@ export const metadata: Metadata = {
     images: "/og/image.png",
   },
   alternates: {
-    canonical: "https://ctey.dev",
+    canonical: SITE_URL,
   },
 };
 

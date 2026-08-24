@@ -5,6 +5,7 @@ import type { ReactNode } from 'react';
 import type { Metadata, Viewport } from 'next';
 import { WebsiteJsonLd, PersonJsonLd } from '@/components/JsonLd';
 import { Analytics } from '@vercel/analytics/next';
+import { BRAND_HOME_URL, SITE_KEYWORDS, SITE_URL } from '@/lib/site';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -17,17 +18,18 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://ctey.dev'), // Replace with your actual domain
+  metadataBase: new URL(SITE_URL),
   title: {
     template: '%s | Chintey Ley',
-    default: 'Chintey Ley – Project Documentation and Portfolio',
+    default: 'Chintey Ley - Software Developer',
   },
-  description: 'Chintey Ley’s documentation site showcasing projects, skills, and technical expertise.',
-  keywords: ['documentation', 'portfolio', 'projects', 'skills', 'expertise'],
+  description:
+    'Project docs for Chintey Ley: TypeScript, Next.js, React, and macOS work, plus live product links.',
+  keywords: [...SITE_KEYWORDS],
   authors: [
     {
       name: 'Chintey Ley',
-      url: 'https://ctey.dev',
+      url: BRAND_HOME_URL,
     },
   ],
   creator: 'Chintey Ley',
@@ -43,26 +45,26 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://ctey.dev', // Replace with your actual URL
+    url: SITE_URL,
     siteName: 'Chintey Ley',
     images: [
       {
-        url: 'https://ctey.dev/og/image.png', // Replace with your actual OG image
+        url: `${SITE_URL}/og/image.png`,
         width: 1200,
         height: 630,
-        alt: 'CTEY',
+        alt: 'Chintey Ley project docs',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    creator: '@kimteyley', // Replace with your actual Twitter handle
+    creator: '@kimteyley',
     images: [
       {
-        url: 'https://ctey.dev/og/image.png', // Replace with your actual Twitter image
+        url: `${SITE_URL}/og/image.png`,
         width: 1200,
         height: 630,
-        alt: 'CTEY',
+        alt: 'Chintey Ley project docs',
       },
     ],
   },
@@ -78,7 +80,7 @@ export const metadata: Metadata = {
   },
   manifest: '/site.webmanifest',
   alternates: {
-    canonical: 'https://ctey.dev', // Replace with your actual URL
+    canonical: SITE_URL,
   },
 };
 
