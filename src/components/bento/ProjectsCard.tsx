@@ -1,5 +1,6 @@
 import { ArrowRight, Laptop, Smartphone, Brain, Monitor } from "lucide-react";
 import Link from "next/link";
+import { BACII_LIVE_URL } from "@/lib/seo";
 
 const categoryIcons = {
   web: Laptop,
@@ -9,6 +10,13 @@ const categoryIcons = {
 };
 
 const featuredProjects = [
+  {
+    title: "Bac II Countdown",
+    description: "Live countdown for Cambodia's Bac II exam",
+    category: "web" as const,
+    href: "/docs/projects/bacii-countdown",
+    liveUrl: BACII_LIVE_URL,
+  },
   {
     title: "Jomnouy",
     description: "AI-powered Baccalaureate prep platform",
@@ -45,7 +53,7 @@ export function ProjectsCard() {
         </Link>
       </div>
 
-      <div className="grid flex-1 grid-cols-1 gap-3 md:grid-cols-3">
+      <div className="grid flex-1 grid-cols-1 gap-3 md:grid-cols-2">
         {featuredProjects.map((project) => {
           const CategoryIcon = categoryIcons[project.category];
           return (
