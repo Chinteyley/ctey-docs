@@ -1,6 +1,9 @@
 import { SITE_URL } from '@/lib/site';
 
 export const BACII_LIVE_URL = 'https://bacii.ctey.dev';
+export const BACII_CANONICAL = 'https://bacii.ctey.dev/';
+
+const BACII_DOCS_SLUG = 'projects/bacii-countdown';
 
 const SEO_EXCLUDED_PROJECT_SLUGS = ['personality-quiz', 'clockedin'] as const;
 
@@ -32,4 +35,12 @@ export function docsPageUrl(slug: string[]): string {
   }
 
   return `${SITE_URL}/docs/${slug.join('/')}`;
+}
+
+export function resolveDocsCanonical(slug: string[]): string {
+  if (slug.join('/') === BACII_DOCS_SLUG) {
+    return BACII_CANONICAL;
+  }
+
+  return docsPageUrl(slug);
 }
