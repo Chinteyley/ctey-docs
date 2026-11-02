@@ -1,7 +1,15 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { Reveal } from './Reveal';
 import { SearchButton } from './SearchButton';
+
+/** Live captures of three shipped projects, fanned beside the headline. */
+const FAN = [
+  { src: '/home/pocketno-phone.webp', name: 'Pocket No' },
+  { src: '/home/bacii-phone.webp', name: 'BacII Countdown' },
+  { src: '/home/snapposts-phone.webp', name: 'SnapPosts' },
+];
 
 interface HeroProps {
   projectCount: number;
@@ -11,6 +19,14 @@ interface HeroProps {
 export function Hero({ projectCount, categories }: HeroProps) {
   return (
     <section className="relative pt-20 pb-10 md:pt-28 md:pb-14">
+      <div className="home-fan" aria-hidden="true">
+        {FAN.map((shot) => (
+          <div key={shot.src} className="home-phone">
+            <Image src={shot.src} alt="" width={640} height={1385} sizes="10rem" priority />
+          </div>
+        ))}
+      </div>
+
       <Reveal>
         <p className="home-pill">
           <span className="home-dot" aria-hidden="true" />
