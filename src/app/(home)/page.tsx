@@ -1,10 +1,10 @@
 import { Metadata } from "next";
-import { BentoGrid, BentoCell } from "@/components/bento/BentoGrid";
-import { HeroSection } from "@/components/bento/HeroSection";
-import { SkillsCard } from "@/components/bento/SkillsCard";
-import { AboutCard } from "@/components/bento/AboutCard";
-import { ProjectsCard } from "@/components/bento/ProjectsCard";
-import { ContactCard } from "@/components/bento/ContactCard";
+import { Hero } from "@/components/home/Hero";
+import { Featured } from "@/components/home/Featured";
+import { ProjectIndex } from "@/components/home/ProjectIndex";
+import { FooterCta } from "@/components/home/FooterCta";
+import { geistMono, instrumentSerif } from "@/components/home/fonts";
+import { getFeaturedProjects, getProjectGroups } from "@/lib/projects";
 import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -28,49 +28,21 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
+  const groups = getProjectGroups();
+  const projectCount = groups.reduce((sum, group) => sum + group.projects.length, 0);
+
   return (
-    <div className="flex flex-1 flex-col items-center justify-center p-4 md:p-8">
-      <BentoGrid>
-        {/* Hero - Large left cell spanning 2 rows */}
-        <BentoCell
-          index={0}
-          className="col-span-1 md:col-span-4 lg:col-span-6 md:row-span-2"
-        >
-          <HeroSection />
-        </BentoCell>
-
-        {/* Skills - Medium top right */}
-        <BentoCell
-          index={1}
-          className="col-span-1 md:col-span-2 lg:col-span-4"
-        >
-          <SkillsCard />
-        </BentoCell>
-
-        {/* About - Small top right corner */}
-        <BentoCell
-          index={2}
-          className="col-span-1 md:col-span-2 lg:col-span-2"
-        >
-          <AboutCard />
-        </BentoCell>
-
-        {/* Projects - Wide bottom right */}
-        <BentoCell
-          index={3}
-          className="col-span-1 md:col-span-4 lg:col-span-6"
-        >
-          <ProjectsCard />
-        </BentoCell>
-
-        {/* Contact - Bottom left */}
-        <BentoCell
-          index={4}
-          className="col-span-1 md:col-span-6 lg:col-span-12"
-        >
-          <ContactCard />
-        </BentoCell>
-      </BentoGrid>
+    <div className={`${instrumentSerif.variable} ${geistMono.variable} home relative isolate flex-1 overflow-x-clip`}>
+      <div className="home-spotlight" aria-hidden="true" />
+      <div className="mx-auto w-full max-w-6xl px-5 md:px-8">
+        <Hero
+          projectCount={projectCount}
+          categories={groups.map((group) => group.label)}
+        />
+        <Featured projects={getFeaturedProjects()} />
+        <ProjectIndex groups={groups} />
+        <FooterCta />
+      </div>
     </div>
   );
 }
