@@ -82,10 +82,8 @@ export function getProjectGroups(): ProjectGroup[] {
 
   return projectsFolder.children.filter(isFolder).map((folder) => {
     const metaPath = source.getNodeMeta(folder)?.path ?? '';
-    const id = /\(([^)]+)\)\/meta\.json$/.exec(metaPath)?.[1];
-    if (!id || !(id in GROUP_LABELS)) {
-      throw new Error(`Unknown project group: ${metaPath || String(folder.name)}`);
-    }
+    // A new category still renders, under its folder title, until it gets a label.
+    const id = /\(([^)]+)\)\/meta\.json$/.exec(metaPath)?.[1] ?? String(folder.name);
 
     const projects = folder.children.flatMap((node) => {
       if (node.type !== 'page') return [];
@@ -93,7 +91,7 @@ export function getProjectGroups(): ProjectGroup[] {
       return page ? [toEntry(page)] : [];
     });
 
-    return { id, label: GROUP_LABELS[id], projects };
+    return { id, label: GROUP_LABELS[id] ?? String(folder.name), projects };
   });
 }
 
