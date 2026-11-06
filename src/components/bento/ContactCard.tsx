@@ -1,5 +1,5 @@
 import type { SVGProps } from "react";
-import { Mail } from "lucide-react";
+import { CalendarDays, Mail } from "lucide-react";
 import Link from "next/link";
 
 function GitHubIcon(props: SVGProps<SVGSVGElement>) {
@@ -23,6 +23,12 @@ const contacts = [
     label: "hello@ctey.dev",
     icon: Mail,
     href: "mailto:hello@ctey.dev",
+  },
+  {
+    label: "Book a call",
+    icon: CalendarDays,
+    href: "https://cal.com/chintey",
+    external: true,
   },
   {
     label: "@chinteyley",
